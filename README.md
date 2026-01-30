@@ -53,11 +53,11 @@ Written by James / mykoala, adapted by Caeden
 
 **Reason:** Consistency, following official Godot guidelines.
 
-#### ALWAYS use pascal case when naming classes
+#### ALWAYS use PascalCase when naming classes
 ```diff
 - class_name my_custom_class
 - class_name myCustomClass
-+ class_name myCustomClass
++ class_name MyCustomClass
 ```
 
 **Reason:** Consistency, following official Godot guidelines.
