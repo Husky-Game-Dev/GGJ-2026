@@ -64,7 +64,7 @@ func _on_input_state_changed(_old_state: InputState, new_state: InputState) -> v
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			get_tree().paused = true
 		_:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			get_tree().paused = false
 
 
