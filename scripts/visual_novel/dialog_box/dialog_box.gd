@@ -42,10 +42,6 @@ var _character_name_container: Control = %character_name_container
 @onready
 var _sfx_audio_player: AudioStreamPlayer = %sfx_player
 
-## Timer to control the delay between characters
-@onready
-var _character_delay_timer: Timer = %character_delay_timer
-
 ## Previous dialog entry, held in case we need to extend it.
 var _previous_dialog: String = ""
 
@@ -90,10 +86,9 @@ func set_dialog_visibility(dialog_visibility: bool) -> void:
 
 		# TODO: This is useless code that just awaits something so calling members do not receive a warning.
 		# Replace with actual animation code later.
-		_character_delay_timer.wait_time = 0.1
-		_character_delay_timer.start(0)
-		await _character_delay_timer.timeout
-
+		var timer: SceneTreeTimer = get_tree().create_timer(0.1)
+		await timer.timeout
+		
 		self.visible = true
 	elif not dialog_visibility and self.visible:
 		self.visible = false
@@ -104,6 +99,7 @@ func _ready() -> void:
 
 # Emit our interaction signal if any keyboard or mouse press is detected
 func _input(event: InputEvent) -> void:
+	print("yay an event")
 	if (event is InputEventMouseButton or event is InputEventKey) and event.is_pressed():
 		_dialog_label.visible_ratio = 1
 		_user_interacted.emit()
@@ -114,7 +110,6 @@ func _display_string(dialog: String, starting_position: int = 0) -> void:
 	_dialog_label.clear()
 
 	var characterDelay: float = 1 / talking_speed 
-	_character_delay_timer.wait_time = characterDelay
 	
 	_previous_dialog = dialog
 	_dialog_label.text = dialog
@@ -128,11 +123,11 @@ func _display_string(dialog: String, starting_position: int = 0) -> void:
 		if is_instance_valid(_sfx_audio_player):
 			_sfx_audio_player.play()
 		
-		_character_delay_timer.start()
-		await _character_delay_timer.timeout
+		var timer: SceneTreeTimer = get_tree().create_timer(characterDelay)
+		await timer.timeout
 	
 	if is_instance_valid(finished_icon):
 		_dialog_label.append_text(" ")
-		_dialog_label.add_image(finished_icon, 40)
+		_dialog_label.add_image(finished_icon, _dialog_label.get_theme_font_size("normal_font_size"))
 	
 	_dialog_label.visible_characters = -1

@@ -16,6 +16,8 @@ metadata/_custom_type_script = "uid://p4ou0e5gll4k"
 
 [node name="character_delay_timer" type="Timer" parent="." unique_id=2084532936]
 unique_name_in_owner = true
+one_shot = true
+ignore_time_scale = true
 
 [node name="dialog_background" type="ColorRect" parent="." unique_id=784719126]
 layout_mode = 1

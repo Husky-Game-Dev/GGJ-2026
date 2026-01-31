@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dqd35yugadtg7"]
+
+[ext_resource type="PackedScene" uid="uid://bxu4lyv1gie46" path="res://scripts/visual_novel/visual_novel_scenario.tscn" id="1_eo1pu"]
+[ext_resource type="Script" uid="uid://bhstbmwmkta6q" path="res://scenes/visual_novel_scenarios/example_scenario/example_scenario.gd" id="2_8yunr"]
+
+[node name="example_scenario" unique_id=2072724166 instance=ExtResource("1_eo1pu")]
+script = ExtResource("2_8yunr")
+
+[node name="character_sprite_container" parent="." index="0" unique_id=1093418518]
+mouse_filter = 2
+
+[node name="character_sprite" parent="character_sprite_container" index="0" unique_id=775705302]
+mouse_filter = 2
