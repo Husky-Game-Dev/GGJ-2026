@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://4refucfdir8w"]
+
+[ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="1_kxy76"]
+[ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="2_6odhy"]
+
+[sub_resource type="Resource" id="Resource_kxy76"]
+script = ExtResource("1_kxy76")
+operation = 5
+bits_to_shift = 1
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_6odhy"]
+script = ExtResource("1_kxy76")
+bitmask = 1
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_mcxuv"]
+script = ExtResource("1_kxy76")
+bitmask = 2
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[resource]
+script = ExtResource("2_6odhy")
+starting_number = SubResource("Resource_6odhy")
+target_number = SubResource("Resource_mcxuv")
+operations = Array[ExtResource("1_kxy76")]([SubResource("Resource_kxy76")])
+metadata/_custom_type_script = "uid://dupwer7p810uu"

@@ -3,7 +3,7 @@ class_name PuzzlePieceModel extends Resource
 
 
 enum Operation {
-	UNSET,
+	NONE,
 	AND,
 	OR,
 	XOR,
@@ -20,7 +20,7 @@ const MAX_BITS: int = 16
 
 ## The operation this puzzle piece performs. Always set.
 @export
-var operation: Operation = Operation.UNSET:
+var operation: Operation = Operation.NONE:
 	set(value):
 		operation = value
 		notify_property_list_changed()
@@ -54,6 +54,6 @@ func _validate_property(property: Dictionary) -> void:
 				property.usage |= PROPERTY_USAGE_EDITOR
 		_:
 			if property.name == "bitmask":
-				property.usage &= ~PROPERTY_USAGE_EDITOR
+				property.usage |= PROPERTY_USAGE_EDITOR
 			if property.name == "bits_to_shift":
 				property.usage &= ~PROPERTY_USAGE_EDITOR
