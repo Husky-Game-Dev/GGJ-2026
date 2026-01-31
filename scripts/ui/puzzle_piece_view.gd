@@ -43,7 +43,7 @@ var can_sort_down: bool = true:
 
 func _ready() -> void:
 	assert(model != null, "PuzzlePieceView was instantiated without a PuzzlePieceModel assigned")
-	assert(model.operation != PuzzlePieceModel.Operation.UNSET, "PuzzlePieceView was instantiated with a PuzzlePieceModel with an unset operation")
+	assert(model.operation != PuzzlePieceModel.Operation.NONE, "PuzzlePieceView was instantiated with a PuzzlePieceModel with an unset operation")
 	assert(model.operation < PuzzlePieceModel.Operation.OPERATION_MAX, "PuzzlePieceView was instantiated with a PuzzlePieceModel with an invalid operation")
 	
 	if show_sort_buttons:
