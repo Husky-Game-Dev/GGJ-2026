@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://e12enm2ph453"]
+
+[ext_resource type="Script" uid="uid://cu83445g4dxps" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c8nxwkkwa7k3q" path="res://scenes/ui/main_menu.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://grox04t28gu2" path="res://scenes/ui/pause_menu.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cqhge3cur1vdk" path="res://scenes/ui/settings_menu.tscn" id="4_tefeu"]
+
+[node name="Main" type="Node" unique_id=1230792686]
+script = ExtResource("1_o5qli")
+
+[node name="MenuLayer" type="CanvasLayer" parent="." unique_id=115850623]
+
+[node name="MainMenu" parent="MenuLayer" unique_id=1029575999 instance=ExtResource("2_jyhfs")]
+
+[node name="PauseMenu" parent="MenuLayer" unique_id=1500597647 instance=ExtResource("3_tbgi4")]
+
+[node name="SettingsMenu" parent="MenuLayer" unique_id=1205346910 instance=ExtResource("4_tefeu")]
+unique_name_in_owner = true

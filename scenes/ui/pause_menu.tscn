@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://grox04t28gu2"]
+
+[ext_resource type="Script" uid="uid://dqo6oi32x4ihi" path="res://scripts/ui/pause_menu.gd" id="1_6tw0m"]
+
+[node name="PauseMenu" type="Control" unique_id=1658206758]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6tw0m")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1664498079]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.2509804)
+
+[node name="ClickOutside" type="Button" parent="." unique_id=1937361433]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"TransparentButton"
+action_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1407250457]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.55
+anchor_right = 0.5
+anchor_bottom = 0.55
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=610291904]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
+focus_next = NodePath("../SettingsButton")
+focus_previous = NodePath("../QuitButton")
+theme_type_variation = &"LargeButton"
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=73928420]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../ResumeButton")
+theme_type_variation = &"LargeButton"
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=234688749]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_top = NodePath("../SettingsButton")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+focus_next = NodePath("../ResumeButton")
+focus_previous = NodePath("../SettingsButton")
+theme_type_variation = &"LargeButton"
+text = "Quit to Desktop"
+
+[connection signal="pressed" from="ClickOutside" to="." method="_on_click_outside_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
