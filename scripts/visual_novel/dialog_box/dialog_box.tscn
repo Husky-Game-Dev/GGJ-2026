@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpmcq4lihgne5"]
+
+[ext_resource type="Script" uid="uid://p4ou0e5gll4k" path="res://modules/visual_novel/dialog_box/dialog_box.gd" id="1_l7u2u"]
+[ext_resource type="Texture2D" uid="uid://bcoudat3y7xxw" path="res://assets/app/icon.png" id="2_ft8ix"]
+
+[node name="dialog_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7u2u")
+finished_icon = ExtResource("2_ft8ix")
+metadata/_custom_type_script = "uid://p4ou0e5gll4k"
+
+[node name="character_delay_timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="dialog_background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_right = -60.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[node name="dialog_label" type="RichTextLabel" parent="dialog_background"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "So this is the dialog"
+
+[node name="character_name_container" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = -122.235
+offset_right = -1463.0
+offset_bottom = -447.235
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[node name="character_name_label" type="RichTextLabel" parent="character_name_container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "Character Name"
+horizontal_alignment = 1
+vertical_alignment = 1

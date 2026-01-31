@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxu4lyv1gie46"]
+
+[ext_resource type="Script" uid="uid://lnt1vgncxddq" path="res://modules/visual_novel/visual_novel_scenario.gd" id="1_ncq2w"]
+[ext_resource type="PackedScene" uid="uid://cpmcq4lihgne5" path="res://modules/visual_novel/dialog_box/dialog_box.tscn" id="2_jibvp"]
+
+[node name="visual_novel_scenario" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncq2w")
+metadata/_custom_type_script = "uid://lnt1vgncxddq"
+
+[node name="dialog_box" parent="." instance=ExtResource("2_jibvp")]
+unique_name_in_owner = true
+layout_mode = 1
