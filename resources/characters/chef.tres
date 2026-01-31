@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cpufy2i17jnmr"]
+
+[ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="1_tjgkr"]
+
+[resource]
+script = ExtResource("1_tjgkr")
+character_name = "The Chef"
+metadata/_custom_type_script = "uid://bamvrpnd4oqyw"

@@ -1,3 +1,4 @@
+@abstract
 class_name VisualNovelScenario
 extends Control
 
@@ -18,10 +19,30 @@ extends Control
 @onready
 var _dialog_box: DialogBox = %dialog_box
 
+@onready
+var _character_sprite_container: CharacterSpriteContainer = %character_sprite_container
+
 ###
 ### Methods
 ###
 
+# Main method that will handle execution of the Visual Novel scenario.
+# _ready() should only be kept for initialization.
+@abstract
+func run_scenario() -> void
+
+### Character functions
+func character_add(character: Character, offset: Vector2 = Vector2.ZERO) -> void:
+	_character_sprite_container.load_character(character, offset)
+
+func character_speak(character: Character, dialog: Array[String]) -> void:
+	_character_sprite_container.set_speaking(character)
+	await speak(character.character_name, dialog)
+
+func character_remove(character: Character) -> void:
+	_character_sprite_container.remove_character(character)
+
+### Dialog box functions
 func show_dialog_box() -> void:
 	await _dialog_box.set_dialog_visibility(true)
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpmcq4lihgne5"]
+[gd_scene format=3 uid="uid://cpmcq4lihgne5"]
 
-[ext_resource type="Script" uid="uid://p4ou0e5gll4k" path="res://modules/visual_novel/dialog_box/dialog_box.gd" id="1_l7u2u"]
-[ext_resource type="Texture2D" uid="uid://bcoudat3y7xxw" path="res://assets/app/icon.png" id="2_ft8ix"]
+[ext_resource type="Script" uid="uid://p4ou0e5gll4k" path="res://scripts/visual_novel/dialog_box/dialog_box.gd" id="1_l7u2u"]
+[ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://assets/icon.svg" id="2_xanox"]
 
-[node name="dialog_box" type="Control"]
+[node name="dialog_box" type="Control" unique_id=1003305669]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,13 +11,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l7u2u")
-finished_icon = ExtResource("2_ft8ix")
+finished_icon = ExtResource("2_xanox")
 metadata/_custom_type_script = "uid://p4ou0e5gll4k"
 
-[node name="character_delay_timer" type="Timer" parent="."]
+[node name="character_delay_timer" type="Timer" parent="." unique_id=2084532936]
 unique_name_in_owner = true
 
-[node name="dialog_background" type="ColorRect" parent="."]
+[node name="dialog_background" type="ColorRect" parent="." unique_id=784719126]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.6
@@ -28,44 +28,37 @@ offset_right = -60.0
 offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.233925, 0.233925, 0.233925, 1)
+color = Color(0.23529412, 0.23529412, 0.23529412, 0.5019608)
 
-[node name="dialog_label" type="RichTextLabel" parent="dialog_background"]
+[node name="dialog_label" type="RichTextLabel" parent="dialog_background" unique_id=2060940767]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = -15.0
-offset_bottom = -15.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/bold_italics_font_size = 32
-theme_override_font_sizes/italics_font_size = 32
-theme_override_font_sizes/mono_font_size = 32
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
 bbcode_enabled = true
 text = "So this is the dialog"
 
-[node name="character_name_container" type="ColorRect" parent="."]
+[node name="character_name_container" type="ColorRect" parent="dialog_background" unique_id=1448547451]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.6
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = -122.235
-offset_right = -1463.0
-offset_bottom = -447.235
-grow_horizontal = 2
-grow_vertical = 0
-color = Color(0.233925, 0.233925, 0.233925, 1)
+offset_top = -300.0
+offset_right = 1000.0
+offset_bottom = -50.00006
+color = Color(0.23529412, 0.23529412, 0.23529412, 0.5019608)
 
-[node name="character_name_label" type="RichTextLabel" parent="character_name_container"]
+[node name="character_name_label" type="RichTextLabel" parent="dialog_background/character_name_container" unique_id=1576597750]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -77,11 +70,11 @@ offset_right = -15.0
 offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/bold_italics_font_size = 32
-theme_override_font_sizes/italics_font_size = 32
-theme_override_font_sizes/mono_font_size = 32
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/normal_font_size = 64
+theme_override_font_sizes/bold_font_size = 64
+theme_override_font_sizes/bold_italics_font_size = 64
+theme_override_font_sizes/italics_font_size = 64
+theme_override_font_sizes/mono_font_size = 64
 bbcode_enabled = true
 text = "Character Name"
 horizontal_alignment = 1

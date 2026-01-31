@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://b7qx53cgm3wk0"]
+
+[ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="1_ixtk3"]
+
+[resource]
+script = ExtResource("1_ixtk3")
+character_name = "Delivery Driver"
+metadata/_custom_type_script = "uid://bamvrpnd4oqyw"
