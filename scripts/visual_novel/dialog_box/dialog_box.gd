@@ -99,7 +99,6 @@ func _ready() -> void:
 
 # Emit our interaction signal if any keyboard or mouse press is detected
 func _input(event: InputEvent) -> void:
-	print("yay an event")
 	if (event is InputEventMouseButton or event is InputEventKey) and event.is_pressed():
 		_dialog_label.visible_ratio = 1
 		_user_interacted.emit()

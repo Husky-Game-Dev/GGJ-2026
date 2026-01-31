@@ -4,8 +4,6 @@ extends VisualNovelScenario
 # DEBUG CODE TO AUTOMATICALLY START OUR SCENARIO
 # THIS SHOULD BE HANDLED BY THE MAIN GAME LOOP
 func _ready() -> void:
-	var timer: SceneTreeTimer = get_tree().create_timer(1)
-	await timer.timeout
 	run_scenario()
 
 func run_scenario() -> void:

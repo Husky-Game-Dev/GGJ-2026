@@ -11,3 +11,6 @@ mouse_filter = 2
 
 [node name="character_sprite" parent="character_sprite_container" index="0" unique_id=775705302]
 mouse_filter = 2
+
+[node name="dialog_box" parent="." index="1" unique_id=2145612105]
+process_mode = 3
