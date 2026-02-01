@@ -104,6 +104,11 @@ func _process(delta: float) -> void:
 		end.modulate = Color(0.85, 0.00, 0.22, 1.00)
 		if !no_win_button:
 			button.visible = true
+	else:
+		last_output.modulate = Color(1, 1, 1, 1)
+		var end: NumberBox = %End
+		end.modulate = Color(1, 1, 1, 1)
+		button.visible = false
 
 func rebalance(spot: int) -> void:
 	var children_left: Array[Node] = containers[0].get_children()
