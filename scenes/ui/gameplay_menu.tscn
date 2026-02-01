@@ -7,12 +7,13 @@
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
-[ext_resource type="PackedScene" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
 [ext_resource type="Resource" uid="uid://jyljs5kembb7" path="res://resources/puzzles/level3.tres" id="5_jwdk4"]
 [ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="6_6p0e4"]
 [ext_resource type="Resource" uid="uid://cofawvq36jfa1" path="res://resources/puzzles/level4.tres" id="6_qrr3w"]
 [ext_resource type="Texture2D" uid="uid://c7noamb7sr4py" path="res://assets/pixel_art/characters/stocker.png" id="7_5jsv3"]
 [ext_resource type="Resource" uid="uid://cc1j13mirgygl" path="res://resources/puzzles/level5.tres" id="7_g0rbq"]
+[ext_resource type="Texture2D" uid="uid://b3l4iip876gwk" path="res://assets/ui/big menu box.png" id="11_bgv53"]
 [ext_resource type="AudioStream" uid="uid://poyrrarxyakn" path="res://assets/music/ggj_puzzle.mp3" id="11_jwdk4"]
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
@@ -104,7 +105,8 @@ scale = Vector2(6, 6)
 texture = ExtResource("7_5jsv3")
 centered = false
 
-[node name="Control" type="Control" parent="." unique_id=1254180871]
+[node name="Control" type="TextureRect" parent="." unique_id=23058235]
+self_modulate = Color(0.43134022, 0.43134025, 0.43134025, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -112,6 +114,7 @@ anchor_bottom = 1.0
 offset_top = 600.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("11_bgv53")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=2092544513]
 layout_mode = 1
