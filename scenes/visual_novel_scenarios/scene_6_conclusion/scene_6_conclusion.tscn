@@ -6,10 +6,12 @@
 [ext_resource type="Resource" uid="uid://cnpgxneibmsl5" path="res://resources/characters/waiter_unmasked.tres" id="4_wnp0w"]
 [ext_resource type="Texture2D" uid="uid://lgxrgihnt8o0" path="res://assets/Backgrounds/Dining room v2.png" id="5_cyfo7"]
 
-[node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_x2rgp")]
+[node name="visual_novel_scenario" unique_id=1379408549 node_paths=PackedStringArray("background") instance=ExtResource("1_x2rgp")]
 script = ExtResource("2_3u8yh")
 player = ExtResource("3_hkxbp")
 waiter_unmasked = ExtResource("4_wnp0w")
+dining_room = ExtResource("5_cyfo7")
+background = NodePath("background")
 
 [node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("5_cyfo7")
