@@ -42,17 +42,16 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 		PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			output.model.bitmask = model.bitmask >> puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.NOT:
-			var tmp_string: String = String.num_uint64(output.model.bitmask, 2)
-			for i: int in range(tmp_string.length()):
-				var char: String = tmp_string[i]
-				if char == "0":
-					char = "1"
-				else:
-					char = "0"
-			var curr_value: int = 1
-			for char: String in tmp_string:
-				if char == "1":
-					output.model.bitmask += curr_value
-				curr_value *= 2
+			var not_mask: int = 0
+			for i: int in range(64):
+				var check_mask: int = 1 << i
+				# If this bit is set, our NOT mask should set this bit
+				# and every bit behind us
+				if (model.bitmask & check_mask) != 0:
+					not_mask |= check_mask
+					not_mask |= check_mask - 1
+			# Our NOT mask should now have all bits that actually have a number
+			output.model.bitmask = ~model.bitmask
+			output.model.bitmask &= not_mask
 	output.custom_minimum_size = self.custom_minimum_size
 	add_sibling(output)

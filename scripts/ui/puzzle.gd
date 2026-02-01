@@ -38,13 +38,19 @@ var container_right: VBoxContainer = null
 @export
 var container_output: VBoxContainer = null
 
+@onready
+var _music_player: AudioStreamPlayer = $PuzzleMusic
+
 var piece_scn: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 
 var _original_enemy_sprite_pos: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	_original_enemy_sprite_pos = enemy_sprite.position
-	#_load_level(1)
+	visibility_changed.connect(_on_visibility_changed)
+
+func _on_visibility_changed() -> void:
+	_music_player.playing = visible
 
 func load_level(level: int) -> void:
 	if level < 0 or level >= levels.size():
