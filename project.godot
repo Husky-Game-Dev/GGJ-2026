@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="GGJ-2026"
+config/name="Bitmask Carnival"
+config/version="1.0.0"
 run/main_scene="uid://e12enm2ph453"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://jhi2lcfb66ld"
 
 [autoload]
 
