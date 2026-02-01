@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dmucmyjtqgi7l"]
 
 [ext_resource type="PackedScene" uid="uid://qjsu2w1epg5i" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
+[ext_resource type="Script" uid="uid://crtsynjty4hmc" path="res://scripts/ui/draggable.gd" id="1_igpgf"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_88qrp"]
 [ext_resource type="Script" uid="uid://n4cguax4gn24" path="res://scripts/ui/v_box_container_sizing.gd" id="3_fqw3q"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
 
 [sub_resource type="Resource" id="Resource_igpgf"]
 script = ExtResource("2_88qrp")
-operation = 1
-bitmask = 2
+operation = 2
+bitmask = 15
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
@@ -42,11 +43,29 @@ anchor_right = 0.99427086
 anchor_bottom = 0.81666666
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PuzzleBox2" unique_id=34024247]
+[node name="RightContainer" type="VBoxContainer" parent="PuzzleBox2" unique_id=34024247]
 layout_mode = 2
 
-[node name="PuzzlePieceView" parent="PuzzleBox2/VBoxContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
+[node name="Dragger" type="Control" parent="PuzzleBox2/RightContainer" unique_id=353139500]
+custom_minimum_size = Vector2(1000, 250)
 layout_mode = 2
+mouse_filter = 1
+script = ExtResource("1_igpgf")
+
+[node name="PuzzlePieceView" parent="PuzzleBox2/RightContainer/Dragger" unique_id=406523941 instance=ExtResource("4_wg7ri")]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -125.0
+offset_right = 500.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
 model = SubResource("Resource_igpgf")
 
 [node name="StartToEnd" type="Control" parent="." unique_id=1132341006]
@@ -92,7 +111,7 @@ grow_vertical = 2
 script = ExtResource("3_fqw3q")
 metadata/_edit_use_anchors_ = true
 
-[node name="GameplayVBoxContainer" type="GridContainer" parent="GameplayBox/ScrollContainer" unique_id=1128122277]
+[node name="LeftContainer" type="GridContainer" parent="GameplayBox/ScrollContainer" unique_id=1128122277]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -100,7 +119,7 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 columns = 2
 
-[node name="Start" parent="GameplayBox/ScrollContainer/GameplayVBoxContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
+[node name="Start" parent="GameplayBox/ScrollContainer/LeftContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -115,3 +134,11 @@ offset_right = 403.35107
 offset_bottom = 1243.0
 disabled = true
 model = SubResource("Resource_wg7ri")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1954985148]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.24705882)

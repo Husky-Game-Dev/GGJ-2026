@@ -5,6 +5,7 @@
 [node name="NumberBox" type="Button" unique_id=338931074]
 offset_right = 838.0
 offset_bottom = 197.0
+mouse_filter = 2
 script = ExtResource("1_2wxvw")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=219393587]
