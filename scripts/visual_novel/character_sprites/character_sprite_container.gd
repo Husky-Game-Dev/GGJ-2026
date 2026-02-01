@@ -22,6 +22,8 @@ func load_character(character: Character, offset: Vector2 = Vector2.ZERO) -> voi
 	new_sprite.texture = character.full_sprite
 	new_sprite.visible = true
 	new_sprite.position += offset
+	new_sprite.flip_h = character.flipped # flip the character by toggling it in the character .tres
+	new_sprite.scale = character.scale
 	_loaded_sprites[character] = new_sprite
 
 func remove_character(character: Character) -> void:

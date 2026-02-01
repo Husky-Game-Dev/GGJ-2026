@@ -11,7 +11,7 @@ func _ready() -> void:
 	run_scenario()
 
 func run_scenario() -> void:
-	character_add(player)
+	character_add(player, Vector2(-1500, -1000))
 	
 	# Janitor Dialogue
 	

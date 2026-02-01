@@ -51,20 +51,14 @@ alignment = 1
 [node name="PLACEHOLDER EXAMPLE" parent="HFlowContainer" unique_id=406523941 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 model = SubResource("Resource_tipki")
-show_sort_buttons = false
-can_sort_up = true
-can_sort_down = true
 
 [node name="PLACEHOLDER EXAMPLE 2" parent="HFlowContainer" unique_id=1893902386 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 model = SubResource("Resource_tefeu")
 show_sort_buttons = true
-can_sort_up = true
-can_sort_down = true
 
 [node name="PLACEHOLDER EXAMPLE 3" parent="HFlowContainer" unique_id=952303143 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 model = SubResource("Resource_o6xl0")
 show_sort_buttons = true
 can_sort_up = false
-can_sort_down = true
