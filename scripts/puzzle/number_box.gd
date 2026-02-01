@@ -43,17 +43,7 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 		PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			output.model.bitmask = model.bitmask >> puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.NOT:
-			# Construct a temporary mask that is all the bits we care about
-			# We further OR (bits - 1) to include all possible bits beneath it
-			#var not_mask: int = PuzzlePieceModel.MAX_BITS
-			#not_mask |= PuzzlePieceModel.MAX_BITS - 1
-			
+			#XOR with 16 1s
 			output.model.bitmask = model.bitmask ^ 65535
-			
-			# Perform bitwise NOT, then AND it with the bits we care about
-			# This should leave our desired bits inverted, while the rest of the integer remains untouched
-			#output.model.bitmask = ~model.bitmask
-			#output.model.bitmask &= not_mask
-	output.model.bitmask &= bitmask
 	output.custom_minimum_size = self.custom_minimum_size
 	add_sibling(output)
