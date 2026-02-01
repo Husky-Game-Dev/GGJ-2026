@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://cqhge3cur1vdk" path="res://scenes/ui/settings_menu.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://doac5nb64g3dj" path="res://scenes/visual_novel_scenarios/scene_4_janitor/scene_4_janitor.tscn" id="5_trceg"]
 [ext_resource type="PackedScene" uid="uid://bk8b821w6jsw2" path="res://scenes/visual_novel_scenarios/scene_5_waiter/scene_5_waiter.tscn" id="6_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dexso5hk5jb5x" path="res://scenes/visual_novel_scenarios/scene_6_conclusion/scene_6_conclusion.tscn" id="7_ya4ey"]
 
 [node name="Main" type="Node" unique_id=1230792686 node_paths=PackedStringArray("visual_novel_scenes", "puzzle")]
 script = ExtResource("1_o5qli")
-visual_novel_scenes = [NodePath("Scenarios/scene_1_argument"), NodePath("Scenarios/scene_2_stocker"), NodePath("Scenarios/scene_3_dishwasher"), NodePath("Scenarios/scene_4_janitor"), NodePath("Scenarios/scene_5_waiter")]
+visual_novel_scenes = [NodePath("Scenarios/scene_1_argument"), NodePath("Scenarios/scene_2_stocker"), NodePath("Scenarios/scene_3_dishwasher"), NodePath("Scenarios/scene_4_janitor"), NodePath("Scenarios/scene_5_waiter"), NodePath("Scenarios/scene_6_conclusion")]
 puzzle = NodePath("GameplayMenu")
 
 [node name="Scenarios" type="CanvasLayer" parent="." unique_id=316282621]
@@ -31,6 +32,9 @@ visible = false
 visible = false
 
 [node name="scene_5_waiter" parent="Scenarios" unique_id=2044286419 instance=ExtResource("6_a8y0u")]
+visible = false
+
+[node name="scene_6_conclusion" parent="Scenarios" unique_id=208870617 instance=ExtResource("7_ya4ey")]
 visible = false
 
 [node name="GameplayMenu" parent="." unique_id=1587044335 instance=ExtResource("2_tbgi4")]

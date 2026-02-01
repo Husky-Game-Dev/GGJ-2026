@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bjidr04ehrb23" path="res://scripts/visual_novel/character_sprites/character_sprite_container.gd" id="1_os250"]
 [ext_resource type="PackedScene" uid="uid://cpmcq4lihgne5" path="res://scripts/visual_novel/dialog_box/dialog_box.tscn" id="2_jibvp"]
 [ext_resource type="PackedScene" uid="uid://vdc750tg873e" path="res://scripts/visual_novel/character_sprites/character_sprite.tscn" id="2_os250"]
+[ext_resource type="Texture2D" uid="uid://df3ppo0yfacw7" path="res://assets/ui/icon_proceed_dialogue.png" id="5_m5nem"]
 
 [node name="visual_novel_scenario" type="Control" unique_id=1379408549]
 layout_mode = 3
@@ -40,3 +41,4 @@ metadata/_custom_type_script = "uid://bjidr04ehrb23"
 [node name="dialog_box" parent="." unique_id=2145612105 instance=ExtResource("2_jibvp")]
 unique_name_in_owner = true
 layout_mode = 1
+finished_icon = ExtResource("5_m5nem")
