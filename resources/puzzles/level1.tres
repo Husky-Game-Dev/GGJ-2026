@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Level" format=3 uid="uid://4refucfdir8w"]
 
+[ext_resource type="Resource" uid="uid://cpufy2i17jnmr" path="res://resources/characters/chef.tres" id="1_6odhy"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="1_kxy76"]
 [ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="2_6odhy"]
 
@@ -24,3 +25,4 @@ script = ExtResource("2_6odhy")
 starting_number = SubResource("Resource_6odhy")
 target_number = SubResource("Resource_mcxuv")
 operations = Array[ExtResource("1_kxy76")]([SubResource("Resource_kxy76")])
+enemy = ExtResource("1_6odhy")

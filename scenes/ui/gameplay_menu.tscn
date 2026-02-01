@@ -122,6 +122,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 
 [node name="End" parent="GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(750, 250)
 layout_mode = 0
 offset_left = -220.0

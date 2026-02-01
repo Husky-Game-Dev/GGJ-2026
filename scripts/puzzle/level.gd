@@ -10,3 +10,6 @@ var target_number: PuzzlePieceModel
 
 @export
 var operations: Array[PuzzlePieceModel] = []
+
+@export
+var enemy: Character

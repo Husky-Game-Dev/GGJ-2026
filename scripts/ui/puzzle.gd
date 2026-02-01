@@ -35,6 +35,16 @@ func _load_level(level: int) -> void:
 	
 	visible = true
 
+func _process(delta: float) -> void:
+	var children_output: Array[Node] = output.get_children()
+	var last_output: NumberBox = children_output[children_output.size() - 1] as NumberBox
+	if last_output.model.bitmask == ends[0].model.bitmask:
+		last_output.modulate = Color(0.85, 0.00, 0.22, 1.00)
+		var end: NumberBox = %End
+		end.modulate = Color(0.85, 0.00, 0.22, 1.00)
+		#OTHER WIN STUFF WOULD GO HEAR
+		#MAYBE HAVE PLAY CLICK TO GO TO NEXT SCREEN
+
 func rebalance(spot: int) -> void:
 	var children_left: Array[Node] = containers[0].get_children()
 	var children_output: Array[Node] = output.get_children()
@@ -58,7 +68,3 @@ func rebalance(spot: int) -> void:
 		spot += 1
 	var new_output: NumberBox = output.get_child(spot) as NumberBox
 	(output.get_child(spot) as NumberBox).grab_focus(true)
-	#scroll.scroll_vertical = 10000
-	#scroll.set_deferred("scroll_vertical", 100000)
-	#if last_output.model.bitmask == end[0].model.bitmask:
-		#print("win")
