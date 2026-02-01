@@ -14,6 +14,7 @@ var offset: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	# Can't do this in the editor for some reason
 	(get_child(0) as HBoxContainer).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	super._ready()
 
 func _process(_delta: float) -> void:
 	if dragging:
