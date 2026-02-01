@@ -5,7 +5,13 @@
 [ext_resource type="Resource" uid="uid://b7qx53cgm3wk0" path="res://resources/characters/player.tres" id="3_b6wjv"]
 [ext_resource type="Resource" uid="uid://bujgfjadt2ejn" path="res://resources/characters/stocker.tres" id="4_70a0o"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_70a0o"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+
 [node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_c6qou")]
 script = ExtResource("2_qqwai")
 player = ExtResource("3_b6wjv")
 stocker = ExtResource("4_70a0o")
+
+[node name="TextureRect" parent="." index="0" unique_id=23887587]
+texture = SubResource("CompressedTexture2D_70a0o")
