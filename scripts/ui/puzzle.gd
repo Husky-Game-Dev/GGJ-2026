@@ -86,10 +86,8 @@ func load_level(level: int) -> void:
 	else:
 		enemy_sprite.position = _original_enemy_sprite_pos
 	
-	if output.get_child_count() > 1:
-		output.get_child(1).queue_free()
-	var last_output: NumberBox = output.get_child(output.get_children().size() - 1) as NumberBox
-	last_output.modulate = Color(1, 1, 1, 1)
+	for i: int in output.get_child_count()-1:
+		output.get_child(output.get_child_count()-1-i).queue_free()
 	var end: NumberBox = %End
 	end.modulate = Color(1, 1, 1, 1)
 	visible = true
