@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://cdy3ofbsucdtl"]
+
+[ext_resource type="FontFile" uid="uid://h112qt1q8yq5" path="res://assets/ui/fonts/The Rift Shop.otf" id="1_2i1mg"]
+
+[resource]
+base_font = ExtResource("1_2i1mg")
+variation_embolden = 1.0
