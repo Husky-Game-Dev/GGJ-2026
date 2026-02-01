@@ -26,12 +26,6 @@ func _ready() -> void:
 		value_label.text = ("%0*d" % [PuzzlePieceModel.MAX_BITS - value_label.text.length(),0]) + (String.num_uint64(model.bitmask, 2))
 
 func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
-	var puzzle_copy: PuzzlePieceView = puzzle_piece_view_scene.instantiate()
-	puzzle_copy.model = puzzle_piece
-	puzzle_copy.can_sort_up = true
-	puzzle_copy.can_sort_down = true
-	puzzle_copy.show_sort_buttons = true
-	
 	var operation: PuzzlePieceModel.Operation = puzzle_piece.operation
 	var amount: int = puzzle_piece.bitmask
 	var output: NumberBox = number_box_scene.instantiate()
@@ -63,4 +57,3 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 				curr_value *= 2
 	output.custom_minimum_size = self.custom_minimum_size
 	add_sibling(output)
-	add_sibling(puzzle_copy)

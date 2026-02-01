@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cighnq86rsvl4"]
+[gd_scene format=3 uid="uid://csoijouvmudjj"]
 
-[ext_resource type="Script" uid="uid://crtsynjty4hmc" path="res://scripts/ui/draggable.gd" id="1_x0c5u"]
+[ext_resource type="Script" path="res://scripts/ui/draggable.gd" id="1_x0c5u"]
 
 [node name="TestDrag" type="Control" unique_id=1974989107]
 process_mode = 3
