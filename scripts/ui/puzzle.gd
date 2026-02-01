@@ -63,7 +63,7 @@ func load_level(level: int) -> void:
 		loaded_level = -1
 		return
 	else:
-		print("Loading level ", level)
+		print("Loading level ", level) # print matches index, not file name fyi
 		loaded_level = level
 	Global.active_puzzle = self
 	for start: NumberBox in starts:
