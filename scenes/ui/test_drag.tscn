@@ -12,69 +12,147 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2102970049]
+[node name="LeftContainer" type="VBoxContainer" parent="." unique_id=2102970049]
 layout_mode = 0
 offset_left = 222.0
 offset_top = 215.0
 offset_right = 1527.0
 offset_bottom = 1746.0
 
-[node name="Panel" type="Panel" parent="VBoxContainer" unique_id=1969364257]
+[node name="Panel" type="Panel" parent="LeftContainer" unique_id=1969364257]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 mouse_filter = 1
 script = ExtResource("1_x0c5u")
 
-[node name="Panel2" type="Panel" parent="VBoxContainer" unique_id=472026697]
+[node name="Panel2" type="Panel" parent="LeftContainer" unique_id=472026697]
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel3" type="Panel" parent="VBoxContainer" unique_id=437027430]
+[node name="Panel3" type="Panel" parent="LeftContainer" unique_id=437027430]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel4" type="Panel" parent="VBoxContainer" unique_id=1138518342]
+[node name="Panel4" type="Panel" parent="LeftContainer" unique_id=1138518342]
 custom_minimum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel5" type="Panel" parent="VBoxContainer" unique_id=871980028]
+[node name="Panel5" type="Panel" parent="LeftContainer" unique_id=871980028]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel6" type="Panel" parent="VBoxContainer" unique_id=118155176]
+[node name="Panel6" type="Panel" parent="LeftContainer" unique_id=118155176]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel7" type="Panel" parent="VBoxContainer" unique_id=713006105]
+[node name="Panel7" type="Panel" parent="LeftContainer" unique_id=713006105]
 custom_minimum_size = Vector2(700, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel8" type="Panel" parent="VBoxContainer" unique_id=210371290]
+[node name="Panel8" type="Panel" parent="LeftContainer" unique_id=210371290]
 custom_minimum_size = Vector2(800, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel9" type="Panel" parent="VBoxContainer" unique_id=84497780]
+[node name="Panel9" type="Panel" parent="LeftContainer" unique_id=84497780]
 custom_minimum_size = Vector2(900, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("1_x0c5u")
 
-[node name="Panel10" type="Panel" parent="VBoxContainer" unique_id=1220054948]
+[node name="Panel10" type="Panel" parent="LeftContainer" unique_id=1220054948]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="RightContainer" type="VBoxContainer" parent="." unique_id=1139474552]
+layout_mode = 0
+offset_left = 2346.0
+offset_top = 193.0
+offset_right = 3651.0
+offset_bottom = 1724.0
+
+[node name="Panel" type="Panel" parent="RightContainer" unique_id=1277858170]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+script = ExtResource("1_x0c5u")
+
+[node name="Panel2" type="Panel" parent="RightContainer" unique_id=212725422]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel3" type="Panel" parent="RightContainer" unique_id=87598037]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel4" type="Panel" parent="RightContainer" unique_id=526769096]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel5" type="Panel" parent="RightContainer" unique_id=1798657628]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel6" type="Panel" parent="RightContainer" unique_id=70867911]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel7" type="Panel" parent="RightContainer" unique_id=1956129373]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel8" type="Panel" parent="RightContainer" unique_id=22525577]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel9" type="Panel" parent="RightContainer" unique_id=1730295322]
+modulate = Color(1, 0, 1, 1)
+custom_minimum_size = Vector2(900, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("1_x0c5u")
+
+[node name="Panel10" type="Panel" parent="RightContainer" unique_id=2099522783]
+modulate = Color(1, 0, 1, 1)
 custom_minimum_size = Vector2(1000, 100)
 layout_mode = 2
 size_flags_horizontal = 0
