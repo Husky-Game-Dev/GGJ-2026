@@ -42,6 +42,9 @@ func character_speak(character: Character, dialog: Array[String]) -> void:
 func character_remove(character: Character) -> void:
 	_character_sprite_container.remove_character(character)
 
+func character_clear_all() -> void:
+	_character_sprite_container.clear()
+
 ### Dialog box functions
 func show_dialog_box() -> void:
 	await _dialog_box.set_dialog_visibility(true)

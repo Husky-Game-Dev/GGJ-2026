@@ -4,17 +4,24 @@ extends VisualNovelScenario
 var player: Character
 @export
 var janitor: Character
-
-# DEBUG CODE TO AUTOMATICALLY START OUR SCENARIO
-# THIS SHOULD BE HANDLED BY THE MAIN GAME LOOP
-func _ready() -> void:
-	run_scenario()
+@export
+var dishwasher: Character
 
 func run_scenario() -> void:
+	character_clear_all()
 	character_add(player, Vector2(-1500, -1000))
-	character_add(janitor, Vector2(500, -350))
+	
+	#Dishwasher Conclusion
+	character_add(dishwasher, Vector2(850, -400))
+	
+	await character_speak(dishwasher, [ "Come here squirrel squirrel squirrel." ])
+	await character_speak(dishwasher, [ "Thanks again for all your help! The poor guy never gets a bite to eat out there." ])
+	await character_speak(dishwasher, [ "If you wouldn't mind, could you help out the others? the Janitor is just down the hall." ])
+
+	character_remove(dishwasher)
 	
 	# Janitor Dialogue
+	character_add(janitor, Vector2(500, -350))
 	
 	await character_speak(janitor, [ "Hey, you’re the one that delivers stuff right?" ])
 	await character_speak(player, [ "That's me!" ])

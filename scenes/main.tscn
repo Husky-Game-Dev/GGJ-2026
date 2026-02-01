@@ -1,15 +1,44 @@
 [gd_scene format=3 uid="uid://e12enm2ph453"]
 
 [ext_resource type="Script" uid="uid://cu83445g4dxps" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://c4m5vscbfasye" path="res://scenes/visual_novel_scenarios/scene_1_argument/scene_1_argument.tscn" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://c8nxwkkwa7k3q" path="res://scenes/ui/main_menu.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dhrj8i0l5iaii" path="res://scenes/ui/gameplay_menu.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://grox04t28gu2" path="res://scenes/ui/pause_menu.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b1xn1d8ghtxft" path="res://scenes/visual_novel_scenarios/scene_2_stocker/scene_2_stocker.tscn" id="3_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://bnl05ychxeqcb" path="res://scenes/visual_novel_scenarios/scene_3_dishwasher/scene_3_dishwasher.tscn" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cqhge3cur1vdk" path="res://scenes/ui/settings_menu.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://doac5nb64g3dj" path="res://scenes/visual_novel_scenarios/scene_4_janitor/scene_4_janitor.tscn" id="5_trceg"]
+[ext_resource type="PackedScene" uid="uid://bk8b821w6jsw2" path="res://scenes/visual_novel_scenarios/scene_5_waiter/scene_5_waiter.tscn" id="6_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dexso5hk5jb5x" path="res://scenes/visual_novel_scenarios/scene_6_conclusion/scene_6_conclusion.tscn" id="7_ya4ey"]
 
-[node name="Main" type="Node" unique_id=1230792686]
+[node name="Main" type="Node" unique_id=1230792686 node_paths=PackedStringArray("visual_novel_scenes", "puzzle")]
 script = ExtResource("1_o5qli")
+visual_novel_scenes = [NodePath("Scenarios/scene_1_argument"), NodePath("Scenarios/scene_2_stocker"), NodePath("Scenarios/scene_3_dishwasher"), NodePath("Scenarios/scene_4_janitor"), NodePath("Scenarios/scene_5_waiter"), NodePath("Scenarios/scene_6_conclusion")]
+puzzle = NodePath("GameplayMenu")
+
+[node name="Scenarios" type="CanvasLayer" parent="." unique_id=316282621]
+
+[node name="scene_1_argument" parent="Scenarios" unique_id=1379408549 instance=ExtResource("2_choun")]
+visible = false
+
+[node name="scene_2_stocker" parent="Scenarios" unique_id=1006594517 instance=ExtResource("3_ya4ey")]
+visible = false
+
+[node name="scene_3_dishwasher" parent="Scenarios" unique_id=1120783255 instance=ExtResource("4_eb6dy")]
+visible = false
+
+[node name="scene_4_janitor" parent="Scenarios" unique_id=2090780836 instance=ExtResource("5_trceg")]
+visible = false
+
+[node name="scene_5_waiter" parent="Scenarios" unique_id=2044286419 instance=ExtResource("6_a8y0u")]
+visible = false
+
+[node name="scene_6_conclusion" parent="Scenarios" unique_id=208870617 instance=ExtResource("7_ya4ey")]
+visible = false
 
 [node name="GameplayMenu" parent="." unique_id=1587044335 instance=ExtResource("2_tbgi4")]
+visible = false
 
 [node name="MenuLayer" type="CanvasLayer" parent="." unique_id=115850623]
 

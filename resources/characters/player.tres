@@ -11,6 +11,5 @@ character_name = "Delivery Driver"
 full_sprite = ExtResource("1_idtff")
 mini_sprite = ExtResource("3_eiy46")
 logo = ExtResource("2_68q0r")
-flipped = true
 scale = Vector2(2, 2)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"

@@ -4,17 +4,25 @@ extends VisualNovelScenario
 var player: Character
 @export
 var waiter: Character
-
-# DEBUG CODE TO AUTOMATICALLY START OUR SCENARIO
-# THIS SHOULD BE HANDLED BY THE MAIN GAME LOOP
-func _ready() -> void:
-	run_scenario()
+@export
+var janitor: Character
 
 func run_scenario() -> void:
+	character_clear_all()
 	character_add(player, Vector2(-1500, -1000))
-	character_add(waiter, Vector2(1000, -950))
+	
+	#Janitor Conclusion
+	character_add(janitor, Vector2(500, -350))
+	
+	await character_speak(janitor, [ "In that case, I'll have a Ring of the Lords watch party with everyone!" ])
+	await character_speak(janitor, [ "Too bad we only get two hours of rest. It might take a while to watch the extended edition." ])
+	await character_speak(janitor, [ "Anyway... The last robot you need to convice is the Waiter." ])
+	await character_speak(janitor, [ "Good luck..." ])
+
+	character_remove(janitor)
 	
 	# Waiter Dialogue
+	character_add(waiter, Vector2(1000, -950))
 	
 	await character_speak(waiter, [ "I don’t have time to talk, our guests will be here any second!" ])
 	await character_speak(player, [ "You haven’t had guests in years, the humans are dead." ])

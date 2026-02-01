@@ -1,6 +1,8 @@
 class_name Puzzle
 extends Control
 
+signal puzzle_complete
+
 @onready
 var placeholder: ColorRect = %Placeholder
 
@@ -15,6 +17,8 @@ var enemy_sprite: Sprite2D = %EnemySprite
 
 @export
 var levels: Array[Level] = []
+
+var loaded_level: int = -1
 
 @export
 var starts: Array[NumberBox] = []
@@ -40,14 +44,16 @@ var _original_enemy_sprite_pos: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	_original_enemy_sprite_pos = enemy_sprite.position
-	_load_level(1)
+	#_load_level(1)
 
-func _load_level(level: int) -> void:
+func load_level(level: int) -> void:
 	if level < 0 or level >= levels.size():
 		print("Attempted to load invalid level")
+		loaded_level = -1
 		return
 	else:
 		print("Loading level ", level)
+		loaded_level = level
 	Global.active_puzzle = self
 	for start: NumberBox in starts:
 		start.set_model(levels[level].starting_number)
@@ -80,6 +86,7 @@ func _process(delta: float) -> void:
 		end.modulate = Color(0.85, 0.00, 0.22, 1.00)
 		#OTHER WIN STUFF WOULD GO HEAR
 		#MAYBE HAVE PLAY CLICK TO GO TO NEXT SCREEN
+		puzzle_complete.emit()
 
 func rebalance(spot: int) -> void:
 	var children_left: Array[Node] = containers[0].get_children()
