@@ -46,9 +46,11 @@ func _ready() -> void:
 	assert(model.operation < PuzzlePieceModel.Operation.OPERATION_MAX, "PuzzlePieceView was instantiated with a PuzzlePieceModel with an invalid operation")
 	
 	if show_sort_buttons:
-		sort_buttons.show()
+		sort_down_button.disabled = false
+		sort_up_button.disabled = false
 	else:
-		sort_buttons.hide()
+		sort_down_button.disabled = true
+		sort_up_button.disabled = true
 	
 	sort_up_button.disabled = !can_sort_up
 	sort_down_button.disabled = !can_sort_down

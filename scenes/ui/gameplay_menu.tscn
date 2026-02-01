@@ -1,7 +1,15 @@
-[gd_scene format=3 uid="uid://dxpruusdwqgue"]
+[gd_scene format=3 uid="uid://dmucmyjtqgi7l"]
 
-[ext_resource type="PackedScene" uid="uid://clorb8ux0my63" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
+[ext_resource type="PackedScene" uid="uid://qjsu2w1epg5i" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_88qrp"]
+[ext_resource type="Script" uid="uid://n4cguax4gn24" path="res://scripts/ui/v_box_container_sizing.gd" id="3_fqw3q"]
+[ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
+
+[sub_resource type="Resource" id="Resource_igpgf"]
+script = ExtResource("2_88qrp")
+operation = 1
+bitmask = 2
+metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
 script = ExtResource("2_88qrp")
@@ -28,74 +36,82 @@ mouse_filter = 1
 [node name="PuzzleBox2" type="ScrollContainer" parent="." unique_id=648647157]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.684
-anchor_top = 0.091000006
-anchor_right = 0.91300005
-anchor_bottom = 0.56100005
-offset_left = 1.4399414
-offset_top = -0.5600128
-offset_right = 0.079833984
-offset_bottom = -0.76013184
+anchor_left = 0.73020834
+anchor_top = 0.14398149
+anchor_right = 0.99427086
+anchor_bottom = 0.81666666
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PuzzleBox2" unique_id=34024247]
 layout_mode = 2
 
+[node name="PuzzlePieceView" parent="PuzzleBox2/VBoxContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
+layout_mode = 2
+model = SubResource("Resource_igpgf")
+
 [node name="StartToEnd" type="Control" parent="." unique_id=1132341006]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 748.0
+offset_top = -139.0
+offset_right = 2873.0
+offset_bottom = 405.0
 
 [node name="Start" parent="StartToEnd" unique_id=338931074 instance=ExtResource("1_gw64q")]
 layout_mode = 1
-anchors_preset = 0
-offset_left = 695.0
-offset_top = 339.0
-offset_right = 1368.3511
-offset_bottom = 523.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 248.0
+offset_top = 154.0
+offset_right = 921.3511
+offset_bottom = 338.0
 disabled = true
 model = SubResource("Resource_fqw3q")
 
 [node name="End" parent="StartToEnd" unique_id=1103401863 instance=ExtResource("1_gw64q")]
 layout_mode = 1
-anchors_preset = 0
-offset_left = 690.0
-offset_top = 758.0
-offset_right = 1363.3511
-offset_bottom = 942.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = 1099.0
+offset_top = 155.0
+offset_right = 1772.3511
+offset_bottom = 339.0
 disabled = true
 model = SubResource("Resource_wg7ri")
 
 [node name="GameplayBox" type="Control" parent="." unique_id=1989928504]
 anchors_preset = 0
-offset_left = 1404.0
-offset_top = 167.0
-offset_right = 2623.0
-offset_bottom = 1484.0
+offset_left = 619.0
+offset_top = 320.0
+offset_right = 1625.0
+offset_bottom = 1424.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="GameplayBox" unique_id=672063978]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.26739562
+anchor_right = 1.7604374
+anchor_bottom = 0.9126803
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_fqw3q")
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer" unique_id=2039110727]
+[node name="GameplayVBoxContainer" type="GridContainer" parent="GameplayBox/ScrollContainer" unique_id=1128122277]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
 
-[node name="End2" parent="GameplayBox" unique_id=402717006 instance=ExtResource("1_gw64q")]
+[node name="Start" parent="GameplayBox/ScrollContainer/GameplayVBoxContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+size_flags_horizontal = 0
+model = SubResource("Resource_fqw3q")
+
+[node name="End" parent="GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
+custom_minimum_size = Vector2(1020, 250)
 layout_mode = 0
-anchors_preset = 0
-offset_left = 7.0
-offset_top = 1336.0
-offset_right = 680.3511
-offset_bottom = 1520.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_left = -270.0
+offset_top = 1059.0
+offset_right = 403.35107
+offset_bottom = 1243.0
 disabled = true
 model = SubResource("Resource_wg7ri")

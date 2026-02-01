@@ -7,9 +7,6 @@ custom_minimum_size = Vector2(1000, 250)
 offset_right = 80.0
 offset_bottom = 20.0
 script = ExtResource("1_vowo4")
-show_sort_buttons = null
-can_sort_up = null
-can_sort_down = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1690885798]
 layout_mode = 1
@@ -22,13 +19,14 @@ grow_vertical = 2
 [node name="OperationLabel" type="Label" parent="HBoxContainer" unique_id=485260041]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 2
 text = "OP"
 
 [node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=1635963035]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-text = "00000000"
+size_flags_horizontal = 2
+text = "0000000000000000"
 horizontal_alignment = 1
 
 [node name="SortButtons" type="VBoxContainer" parent="HBoxContainer" unique_id=1777826187]
@@ -48,5 +46,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Down"
 
+[connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/SortButtons/SortUpButton" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/SortButtons/SortDownButton" to="." method="_on_down_button_pressed"]
