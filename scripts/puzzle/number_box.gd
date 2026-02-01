@@ -42,17 +42,6 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 		PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			output.model.bitmask = model.bitmask >> puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.NOT:
-			var tmp_string: String = String.num_uint64(output.model.bitmask, 2)
-			for i: int in range(tmp_string.length()):
-				var char: String = tmp_string[i]
-				if char == "0":
-					char = "1"
-				else:
-					char = "0"
-			var curr_value: int = 1
-			for char: String in tmp_string:
-				if char == "1":
-					output.model.bitmask += curr_value
-				curr_value *= 2
+			output.model.bitmask = ~model.bitmask
 	output.custom_minimum_size = self.custom_minimum_size
 	add_sibling(output)
