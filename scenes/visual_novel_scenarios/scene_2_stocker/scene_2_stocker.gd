@@ -4,13 +4,22 @@ extends VisualNovelScenario
 var player: Character
 @export
 var stocker: Character
+@export
+var chef: Character
 
 func run_scenario() -> void:
 	character_clear_all()
 	character_add(player, Vector2(-1500, -1000))
-	character_add(stocker, Vector2(500, -650))
+	
+	#Chef Conclusion
+	character_add(chef, Vector2(0, -1000))
+	
+	await character_speak(chef, [ "Great job Delivery Guy! Convincing the Stocker would be a good start. He always trusted the last Delivery Bot." ])
+	
+	character_remove(chef)
 	
 	# Stocker Dialogue
+	character_add(stocker, Vector2(500, -650))
 	
 	await character_speak(stocker, [ "Aah, that's where you are! I’ve been looking for you all… however long its been." ])
 	await character_speak(player, [ "Sorry, I couldn’t find the loading bay." ])

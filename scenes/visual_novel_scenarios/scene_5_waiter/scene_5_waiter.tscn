@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://c6107nxf21aq5" path="res://scenes/visual_novel_scenarios/scene_5_waiter/scene_5_waiter.gd" id="2_7lk3q"]
 [ext_resource type="Resource" uid="uid://b7qx53cgm3wk0" path="res://resources/characters/player.tres" id="3_n4vus"]
 [ext_resource type="Resource" uid="uid://bmr03j3bpq0b6" path="res://resources/characters/waiter.tres" id="4_3k1m7"]
+[ext_resource type="Resource" uid="uid://ccetcoypssobo" path="res://resources/characters/janitor.tres" id="5_rb3ii"]
 [ext_resource type="Texture2D" uid="uid://lgxrgihnt8o0" path="res://assets/Backgrounds/Dining room v2.png" id="5_tqvgs"]
 
 [node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_2eln7")]
 script = ExtResource("2_7lk3q")
 player = ExtResource("3_n4vus")
 waiter = ExtResource("4_3k1m7")
+janitor = ExtResource("5_rb3ii")
 
 [node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("5_tqvgs")

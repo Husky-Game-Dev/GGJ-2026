@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cnpgxneibmsl5"]
+
+[ext_resource type="Texture2D" uid="uid://c27lpuyuov83" path="res://assets/character_art/Waiter_unmask_art.png" id="1_6nstm"]
+[ext_resource type="Texture2D" uid="uid://dbk875moruvuw" path="res://assets/ui/Waiter Name.png" id="2_yqkbc"]
+[ext_resource type="Texture2D" uid="uid://b1w4n1cxv1k6w" path="res://assets/pixel_art/characters/waiter.png" id="3_dyak4"]
+[ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="4_6g8uj"]
+
+[resource]
+script = ExtResource("4_6g8uj")
+character_name = "The Waiter Unmasked"
+full_sprite = ExtResource("1_6nstm")
+mini_sprite = ExtResource("3_dyak4")
+logo = ExtResource("2_yqkbc")
+flipped = true
+scale = Vector2(2, 2)
+metadata/_custom_type_script = "uid://bamvrpnd4oqyw"
