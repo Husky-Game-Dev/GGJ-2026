@@ -1,4 +1,4 @@
-extends Control
+extends PuzzlePieceView
 
 @onready var root: Control = $"../../.." as Control
 @onready var container_left: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"
@@ -42,7 +42,6 @@ func _start_drag() -> void:
 	container = get_parent() as Container 
 	offset = position - container.get_local_mouse_position()
 	
-	print("parent: ", get_parent())
 	reparent(root)
 	placeholder.reparent(container)
 	placeholder.visible = true

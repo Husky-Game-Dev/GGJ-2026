@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://csoijouvmudjj"]
+[gd_scene format=3 uid="uid://cighnq86rsvl4"]
 
 [ext_resource type="Script" uid="uid://crtsynjty4hmc" path="res://scripts/ui/draggable.gd" id="1_x0c5u"]
 
@@ -165,3 +165,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0.24705882)
+
+[node name="Label" type="Label" parent="." unique_id=1895923658]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 49.0
+offset_right = 2876.0
+offset_bottom = 137.0
+text = "This doesn't work anymore. Dragging is now implemented in gameplay_menu though.
+This should probably be deleted at some point."

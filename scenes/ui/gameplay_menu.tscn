@@ -1,14 +1,15 @@
-[gd_scene format=3 uid="uid://dmucmyjtqgi7l"]
+[gd_scene format=3 uid="uid://dhrj8i0l5iaii"]
 
 [ext_resource type="PackedScene" uid="uid://qjsu2w1epg5i" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
-[ext_resource type="Script" uid="uid://crtsynjty4hmc" path="res://scripts/ui/draggable.gd" id="1_igpgf"]
+[ext_resource type="Script" uid="uid://dhn1vutyyfnor" path="res://scenes/ui/puzzle.gd" id="1_kan1k"]
+[ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="2_22ibf"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_88qrp"]
+[ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
 
-[sub_resource type="Resource" id="Resource_igpgf"]
+[sub_resource type="Resource" id="Resource_kan1k"]
 script = ExtResource("2_88qrp")
-operation = 2
-bitmask = 15
+operation = 1
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
@@ -36,6 +37,8 @@ offset_bottom = 497.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_kan1k")
+levels = Array[ExtResource("2_22ibf")]([ExtResource("3_6ih4k")])
 
 [node name="PuzzleBox2" type="ScrollContainer" parent="." unique_id=648647157]
 layout_mode = 1
@@ -49,25 +52,9 @@ metadata/_edit_use_anchors_ = true
 [node name="RightContainer" type="VBoxContainer" parent="PuzzleBox2" unique_id=34024247]
 layout_mode = 2
 
-[node name="Dragger" type="Control" parent="PuzzleBox2/RightContainer" unique_id=353139500]
-custom_minimum_size = Vector2(1000, 250)
+[node name="PuzzlePieceView" parent="PuzzleBox2/RightContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
 layout_mode = 2
-mouse_filter = 1
-script = ExtResource("1_igpgf")
-
-[node name="PuzzlePieceView" parent="PuzzleBox2/RightContainer/Dragger" unique_id=406523941 instance=ExtResource("4_wg7ri")]
-show_behind_parent = true
-custom_minimum_size = Vector2(0, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.08
-anchor_bottom = 0.08
-offset_right = 670.0
-offset_bottom = 230.0
-grow_horizontal = 2
-grow_vertical = 2
-model = SubResource("Resource_igpgf")
-metadata/_edit_use_anchors_ = true
+model = SubResource("Resource_kan1k")
 
 [node name="StartToEnd" type="Control" parent="." unique_id=1132341006]
 anchors_preset = 0
