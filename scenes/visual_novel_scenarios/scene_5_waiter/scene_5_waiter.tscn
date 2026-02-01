@@ -6,13 +6,14 @@
 [ext_resource type="Resource" uid="uid://bmr03j3bpq0b6" path="res://resources/characters/waiter.tres" id="4_3k1m7"]
 [ext_resource type="Resource" uid="uid://ccetcoypssobo" path="res://resources/characters/janitor.tres" id="5_rb3ii"]
 [ext_resource type="Texture2D" uid="uid://lgxrgihnt8o0" path="res://assets/Backgrounds/Dining room v2.png" id="5_tqvgs"]
+[ext_resource type="Texture2D" uid="uid://c6arkrrbtlph8" path="res://assets/Backgrounds/Store room bg.png" id="6_i1wac"]
 
 [node name="visual_novel_scenario" unique_id=1379408549 node_paths=PackedStringArray("background") instance=ExtResource("1_2eln7")]
 script = ExtResource("2_7lk3q")
 player = ExtResource("3_n4vus")
 waiter = ExtResource("4_3k1m7")
 janitor = ExtResource("5_rb3ii")
-conclusion_texture = ExtResource("5_tqvgs")
+conclusion_texture = ExtResource("6_i1wac")
 scene_texture = ExtResource("5_tqvgs")
 background = NodePath("background")
 

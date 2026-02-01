@@ -11,11 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://doac5nb64g3dj" path="res://scenes/visual_novel_scenarios/scene_4_janitor/scene_4_janitor.tscn" id="5_trceg"]
 [ext_resource type="PackedScene" uid="uid://bk8b821w6jsw2" path="res://scenes/visual_novel_scenarios/scene_5_waiter/scene_5_waiter.tscn" id="6_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://dexso5hk5jb5x" path="res://scenes/visual_novel_scenarios/scene_6_conclusion/scene_6_conclusion.tscn" id="7_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://xrkyl3wqycp6" path="res://scenes/ui/transition_fade.tscn" id="9_eb6dy"]
 
-[node name="Main" type="Node" unique_id=1230792686 node_paths=PackedStringArray("visual_novel_scenes", "puzzle")]
+[node name="Main" type="Node" unique_id=1230792686 node_paths=PackedStringArray("visual_novel_scenes", "puzzle", "transition_fade")]
 script = ExtResource("1_o5qli")
 visual_novel_scenes = [NodePath("Scenarios/scene_1_argument"), NodePath("Scenarios/scene_2_stocker"), NodePath("Scenarios/scene_3_dishwasher"), NodePath("Scenarios/scene_4_janitor"), NodePath("Scenarios/scene_5_waiter"), NodePath("Scenarios/scene_6_conclusion")]
 puzzle = NodePath("GameplayMenu")
+transition_fade = NodePath("TransitionLayer/TransitionFade")
 
 [node name="Scenarios" type="CanvasLayer" parent="." unique_id=316282621]
 
@@ -39,6 +41,10 @@ visible = false
 
 [node name="GameplayMenu" parent="." unique_id=1587044335 instance=ExtResource("2_tbgi4")]
 visible = false
+
+[node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=1899162072]
+
+[node name="TransitionFade" parent="TransitionLayer" unique_id=574651459 instance=ExtResource("9_eb6dy")]
 
 [node name="MenuLayer" type="CanvasLayer" parent="." unique_id=115850623]
 
