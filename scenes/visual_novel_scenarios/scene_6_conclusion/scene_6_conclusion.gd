@@ -5,6 +5,8 @@ var player: Character
 @export
 var waiter_unmasked: Character
 @export
+var narrator: Character
+@export
 var dining_room: CompressedTexture2D
 @export
 var background: TextureRect
