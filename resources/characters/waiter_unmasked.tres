@@ -11,6 +11,5 @@ character_name = "The Waiter Unmasked"
 full_sprite = ExtResource("1_6nstm")
 mini_sprite = ExtResource("3_dyak4")
 logo = ExtResource("2_yqkbc")
-flipped = true
 scale = Vector2(2, 2)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"
