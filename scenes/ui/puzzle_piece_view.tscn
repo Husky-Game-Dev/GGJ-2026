@@ -11,12 +11,13 @@ script = ExtResource("1_vowo4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1690885798]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -44.0
+offset_right = 706.0
+offset_bottom = 44.0
 grow_vertical = 2
-theme_override_constants/separation = -737
 
 [node name="OperationLabel" type="Label" parent="HBoxContainer" unique_id=485260041]
 unique_name_in_owner = true
@@ -27,28 +28,8 @@ text = "OP"
 [node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=1635963035]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
 text = "0000000000000000"
 horizontal_alignment = 1
 
-[node name="SortButtons" type="VBoxContainer" parent="HBoxContainer" unique_id=1777826187]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="SortUpButton" type="Button" parent="HBoxContainer/SortButtons" unique_id=1917192786]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "Up"
-
-[node name="SortDownButton" type="Button" parent="HBoxContainer/SortButtons" unique_id=1280218935]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "Down"
-
 [connection signal="pressed" from="." to="." method="_on_pressed"]
-[connection signal="pressed" from="HBoxContainer/SortButtons/SortUpButton" to="." method="_on_up_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/SortButtons/SortDownButton" to="." method="_on_down_button_pressed"]

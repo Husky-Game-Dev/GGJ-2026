@@ -46,7 +46,8 @@ func _start_drag() -> void:
 	reparent(root)
 	placeholder.reparent(container)
 	placeholder.visible = true
-	placeholder.custom_minimum_size = size
+	var tmp: NumberBox = container_output.get_child(0)
+	placeholder.custom_minimum_size = tmp.size
 	placeholder.size_flags_horizontal = SIZE_SHRINK_BEGIN
 	
 func _stop_drag() -> void:
@@ -85,6 +86,10 @@ func rebalance() -> void:
 	
 	for i: int in range(0, children_left.size()):
 		if children_left[i] == placeholder:
+			placeholder.visible = false
+			placeholder.reparent(root)
+			continue
+		if children_left[i - 1] == placeholder:
 			placeholder.visible = false
 			placeholder.reparent(root)
 			continue
