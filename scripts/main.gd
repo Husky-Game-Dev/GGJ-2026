@@ -62,8 +62,9 @@ func _game_transition_start() -> void:
 			await transition_fade.fade_in_transition()
 			puzzle.visible = false
 		
-		
 		scene += 1
 	
 	# By this point, assume the game is over, head to main menu
 	InputManager.switch_input_state(InputManager.InputState.MAIN_MENU)
+	transition_fade.fade_out_transition()
+	_has_started = false
