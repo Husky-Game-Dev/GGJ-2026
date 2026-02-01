@@ -11,7 +11,8 @@ func _ready() -> void:
 	run_scenario()
 
 func run_scenario() -> void:
-	character_add(player)
+	character_add(player, Vector2(-1500, -1000))
+	character_add(dishwasher, Vector2(850, -400))
 	
 	# Dishwasher Dialogue
 	

@@ -12,6 +12,9 @@ var full_sprite: Texture2D = null
 var mini_sprite: Texture2D = null
 
 @export
+var logo: Texture2D = null
+
+@export
 var flipped: bool = false
 
 @export

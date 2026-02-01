@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=23887587]
+[node name="background" type="TextureRect" parent="." unique_id=23887587]
 layout_mode = 0
 offset_left = 4.0
 offset_top = -4.0

@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func run_scenario() -> void:
 	character_add(player, Vector2(-1500, -1000))
-	character_add(waiter, Vector2(1350, 0))
+	character_add(waiter, Vector2(1000, -950))
 	
 	# Waiter Dialogue
 	

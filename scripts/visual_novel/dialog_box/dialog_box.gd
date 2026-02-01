@@ -34,9 +34,15 @@ var _dialog_label: RichTextLabel = %dialog_label
 @onready
 var _character_name_label: RichTextLabel = %character_name_label
 
+@onready
+var _character_logo_label: TextureRect = %character_logo_label
+
 ## Container for the character name label, which will be hidden if the name is empty.
 @onready
 var _character_name_container: Control = %character_name_container
+
+@onready
+var _character_logo_container: TextureRect = %character_logo_container
 
 ## AudioStreamPlayer which will play with every character
 @onready
@@ -50,10 +56,10 @@ var _previous_dialog: String = ""
 ##
 
 ## Sets the character name label to the given name.
-func display_character_name(character_name: String) -> void:
+func display_character_name(character_logo: Texture2D) -> void:
 	# Sets the character name label to the given name and makes it visible
-	_character_name_label.text = character_name
-	_character_name_container.visible = !character_name.is_empty()
+	_character_logo_label.texture = character_logo
+	_character_logo_container.visible = true #!character_name.is_empty()
 
 ## Displays a list of dialog entries, waiting for user interaction between each entry.
 # Variadic version for 4.5: func display_string(...entries: Array) -> void:

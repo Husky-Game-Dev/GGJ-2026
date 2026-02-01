@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://ccetcoypssobo"]
 
-[ext_resource type="Texture2D" uid="uid://dju0n3of3v7gf" path="res://assets/character_art/delivery_guy_art.png" id="1_m5cmt"]
+[ext_resource type="Texture2D" uid="uid://cjm3dir1upgs5" path="res://assets/character_art/Janitor_art.png" id="1_m5cmt"]
 [ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="2_pkqiu"]
 
 [resource]
 script = ExtResource("2_pkqiu")
 character_name = "The Janitor"
 full_sprite = ExtResource("1_m5cmt")
+scale = Vector2(2, 2)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"

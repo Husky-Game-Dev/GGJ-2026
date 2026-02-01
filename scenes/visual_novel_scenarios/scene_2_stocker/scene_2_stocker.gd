@@ -11,7 +11,8 @@ func _ready() -> void:
 	run_scenario()
 
 func run_scenario() -> void:
-	character_add(player)
+	character_add(player, Vector2(-1500, -1000))
+	character_add(stocker, Vector2(500, -650))
 	
 	# Stocker Dialogue
 	
@@ -24,12 +25,3 @@ func run_scenario() -> void:
 	await character_speak(player, [ "Isn’t oil good for bots? Why would you need to get it in secret?" ])
 	await character_speak(stocker, [ "Ugh, rule 3 section 2… ‘the consumption of oil is prohibited by all employees.’" ])
 	await character_speak(player, [ "This should definitely be changed." ])
-
-	
-	
-
-
-
-	
-	
-	

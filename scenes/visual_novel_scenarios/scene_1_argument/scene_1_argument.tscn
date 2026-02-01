@@ -16,7 +16,7 @@ player = ExtResource("3_72usa")
 waiter = ExtResource("4_7xecq")
 chef = ExtResource("5_wkuvp")
 
-[node name="TextureRect" parent="." index="0" unique_id=23887587]
+[node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("6_wkuvp")
 
 [node name="dialog_box" parent="." index="2" unique_id=2145612105]

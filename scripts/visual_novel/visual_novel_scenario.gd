@@ -37,7 +37,7 @@ func character_add(character: Character, offset: Vector2 = Vector2.ZERO) -> void
 
 func character_speak(character: Character, dialog: Array[String]) -> void:
 	_character_sprite_container.set_speaking(character)
-	await speak(character.character_name, dialog)
+	await speak(character.logo, dialog)
 
 func character_remove(character: Character) -> void:
 	_character_sprite_container.remove_character(character)
@@ -59,12 +59,12 @@ func narrate(dialog: Array[String]) -> void:
 			line = "[i]%s[/i]" % line
 			dialog[i] = line
 
-	_dialog_box.display_character_name("")
+	#_dialog_box.display_character_name("")
 	_dialog_box.set_dialog_centered(true)
 	await _dialog_box.set_dialog_visibility(true)
 	await _dialog_box.display_string(dialog)
 
-func speak(character_name: String, dialog: Array[String]) -> void:
+func speak(character_name: Texture2D, dialog: Array[String]) -> void:
 	_dialog_box.display_character_name(character_name)
 	_dialog_box.set_dialog_centered(false)
 	await _dialog_box.set_dialog_visibility(true)

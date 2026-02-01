@@ -13,7 +13,9 @@ func _ready() -> void:
 	run_scenario()
 
 func run_scenario() -> void:
-	character_add(player)
+	character_add(player, Vector2(-1500, -1000))
+	character_add(chef, Vector2(0, -1000))
+	character_add(waiter, Vector2(1000, -950))
 	
 	# Argument between Chef and Waiter Dialogue
 	
@@ -28,6 +30,7 @@ func run_scenario() -> void:
 	await character_speak(chef, ["SEE?!?"])
 	await character_speak(waiter, ["Fine, whatever, let's see what everyone else has to say about it!"])
 	
+	character_remove(waiter)
 	await narrate([ "The Waiter stomps off, clearly angry with the argument...", "After things cool down, The Chef turns towards you." ])
 	# Chef Dialogue
 	

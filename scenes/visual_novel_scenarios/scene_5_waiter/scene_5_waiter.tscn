@@ -11,7 +11,7 @@ script = ExtResource("2_7lk3q")
 player = ExtResource("3_n4vus")
 waiter = ExtResource("4_3k1m7")
 
-[node name="TextureRect" parent="." index="0" unique_id=23887587]
+[node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("5_tqvgs")
 
 [node name="character_sprite_container" parent="." index="1" unique_id=1093418518]

@@ -2,9 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://bsyhty41gd5dc" path="res://assets/character_art/chef_art.png" id="1_mhu4f"]
 [ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="1_tjgkr"]
+[ext_resource type="Texture2D" uid="uid://cn05rjtwx47a1" path="res://assets/ui/Chef Name.png" id="2_d3jbc"]
 
 [resource]
 script = ExtResource("1_tjgkr")
 character_name = "The Chef"
 full_sprite = ExtResource("1_mhu4f")
+logo = ExtResource("2_d3jbc")
+scale = Vector2(2, 2)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"
