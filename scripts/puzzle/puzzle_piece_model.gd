@@ -42,7 +42,7 @@ func _validate_property(property: Dictionary) -> void:
 		))
 	
 	match operation:
-		Operation.AND, Operation.OR, Operation.XOR:
+		Operation.NONE, Operation.AND, Operation.OR, Operation.XOR:
 			if property.name == "bitmask":
 				property.usage |= PROPERTY_USAGE_EDITOR
 			if property.name == "bits_to_shift":
@@ -54,6 +54,6 @@ func _validate_property(property: Dictionary) -> void:
 				property.usage |= PROPERTY_USAGE_EDITOR
 		_:
 			if property.name == "bitmask":
-				property.usage |= PROPERTY_USAGE_EDITOR
+				property.usage &= ~PROPERTY_USAGE_EDITOR
 			if property.name == "bits_to_shift":
 				property.usage &= ~PROPERTY_USAGE_EDITOR
