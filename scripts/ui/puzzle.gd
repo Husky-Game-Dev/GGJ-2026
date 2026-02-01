@@ -2,10 +2,16 @@ class_name Puzzle
 extends Control
 
 @onready
+var placeholder: ColorRect = %Placeholder
+
+@onready
 var output: BoxContainer = %OutputContainer
 
 @onready
 var scroll: ScrollContainer = %ScrollContainer
+
+@onready
+var enemy_sprite: Sprite2D = %EnemySprite
 
 @export
 var levels: Array[Level] = []
@@ -19,9 +25,21 @@ var ends: Array[NumberBox] = []
 @export
 var containers: Array[BoxContainer] = []
 
+@export
+var container_left: VBoxContainer = null
+
+@export
+var container_right: VBoxContainer = null
+
+@export
+var container_output: VBoxContainer = null
+
 var piece_scn: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 
+var _original_enemy_sprite_pos: Vector2 = Vector2.ZERO
+
 func _ready() -> void:
+	_original_enemy_sprite_pos = enemy_sprite.position
 	_load_level(1)
 
 func _load_level(level: int) -> void:
@@ -30,6 +48,7 @@ func _load_level(level: int) -> void:
 		return
 	else:
 		print("Loading level ", level)
+	Global.active_puzzle = self
 	for start: NumberBox in starts:
 		start.set_model(levels[level].starting_number)
 	for end: NumberBox in ends:
@@ -42,6 +61,13 @@ func _load_level(level: int) -> void:
 		var piece: PuzzlePieceView = piece_scn.instantiate()
 		piece.model = model
 		containers[1].add_child(piece)
+	
+	enemy_sprite.texture = levels[level].enemy.mini_sprite
+	if levels[level].enemy.character_name == "The Chef":
+		# The chef's sprite is larger and needs a hardcoded position
+		enemy_sprite.position = Vector2(176.0, -744)
+	else:
+		enemy_sprite.position = _original_enemy_sprite_pos
 	
 	visible = true
 
@@ -77,4 +103,5 @@ func rebalance(spot: int) -> void:
 	if spot+1 < children_output.size():
 		spot += 1
 	var new_output: NumberBox = output.get_child(spot) as NumberBox
-	(output.get_child(spot) as NumberBox).grab_focus(true)
+	# FIXME: This crashes if you drop a puzzle piece on the right side at an index higher than there are puzzle pieces on the left side
+	#(output.get_child(spot) as NumberBox).grab_focus(true)

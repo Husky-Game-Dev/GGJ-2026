@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://e12enm2ph453"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cu83445g4dxps" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c8nxwkkwa7k3q" path="res://scenes/ui/main_menu.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dhrj8i0l5iaii" path="res://scenes/ui/gameplay_menu.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://grox04t28gu2" path="res://scenes/ui/pause_menu.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cqhge3cur1vdk" path="res://scenes/ui/settings_menu.tscn" id="4_tefeu"]
 
 [node name="Main" type="Node" unique_id=1230792686]
 script = ExtResource("1_o5qli")
+
+[node name="GameplayMenu" parent="." unique_id=1587044335 instance=ExtResource("2_tbgi4")]
 
 [node name="MenuLayer" type="CanvasLayer" parent="." unique_id=115850623]
 

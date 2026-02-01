@@ -1,12 +1,5 @@
 extends PuzzlePieceView
 
-@onready var root: Puzzle = $"../../.."
-@onready var container_left: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"
-@onready var container_right: VBoxContainer = $".."
-@onready var container_output: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/OutputContainer"
-@onready var placeholder: ColorRect = $"../../../ColorRect" as ColorRect
-@onready var threshold_x: float = _get_threshold()
-
 var container: Container
 var dragging: bool = false
 var offset: Vector2 = Vector2.ZERO
@@ -18,17 +11,17 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if dragging:
-		var mouse_pos: Vector2 = root.get_local_mouse_position()
+		var mouse_pos: Vector2 = Global.active_puzzle.get_local_mouse_position()
 		position = mouse_pos + offset
 		
-		var new_container: Container = container_left if mouse_pos.x < threshold_x else container_right
+		var new_container: Container = Global.active_puzzle.container_left if mouse_pos.x < _get_threshold() else Global.active_puzzle.container_right
 		
 		if new_container != container:
 			container = new_container
-			placeholder.reparent(container)
+			Global.active_puzzle.placeholder.reparent(container)
 		
 		var spot: int = find_spot()
-		container.move_child(placeholder, spot)
+		container.move_child(Global.active_puzzle.placeholder, spot)
 
 func _gui_input(event: InputEvent) -> void:
 	if not dragging and event is InputEventMouseButton:
@@ -48,12 +41,12 @@ func _start_drag() -> void:
 	offset = position - container.get_local_mouse_position()
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
-	reparent(root)
-	placeholder.reparent(container)
-	placeholder.visible = true
-	var tmp: NumberBox = container_output.get_child(0)
-	placeholder.custom_minimum_size = tmp.size
-	placeholder.size_flags_horizontal = SIZE_SHRINK_BEGIN
+	reparent(Global.active_puzzle)
+	Global.active_puzzle.placeholder.reparent(container)
+	Global.active_puzzle.placeholder.visible = true
+	var tmp: NumberBox = Global.active_puzzle.container_output.get_child(0)
+	Global.active_puzzle.placeholder.custom_minimum_size = tmp.size
+	Global.active_puzzle.placeholder.size_flags_horizontal = SIZE_SHRINK_BEGIN
 	
 func _stop_drag() -> void:
 	dragging = false
@@ -62,16 +55,16 @@ func _stop_drag() -> void:
 	
 	reparent(container)
 	
-	placeholder.visible = false
-	placeholder.reparent(root)
+	Global.active_puzzle.placeholder.visible = false
+	Global.active_puzzle.placeholder.reparent(Global.active_puzzle)
 	
 	if spot != -1:
 		container.move_child(self, spot)
-		root.rebalance(spot)
+		Global.active_puzzle.rebalance(spot)
 
 func _get_threshold() -> float:
-	var left_edge: float = container_left.global_position.x + container_left.size.x
-	var right_edge: float = container_right.global_position.x
+	var left_edge: float = Global.active_puzzle.container_left.global_position.x + Global.active_puzzle.container_left.size.x
+	var right_edge: float = Global.active_puzzle.container_right.global_position.x
 	return left_edge + ((right_edge - left_edge) / 2.0) + 1000
 
 func find_spot() -> int:

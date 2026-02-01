@@ -53,11 +53,15 @@ position = Vector2(127.295, 0)
 texture = ExtResource("3_f4a4m")
 centered = false
 
-[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=600450370]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2119564697]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Parallax2D4" type="Parallax2D" parent="CanvasLayer" unique_id=600450370]
 repeat_size = Vector2(512, 0)
 repeat_times = 17
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1473817866]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Parallax2D4" unique_id=1473817866]
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_ngyty")
 position = Vector2(127.295, 0)
@@ -86,20 +90,30 @@ position = Vector2(127.295, 0)
 texture = ExtResource("6_qurf5")
 centered = false
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=216770527]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1780472900]
+
+[node name="Parallax2D" type="Parallax2D" parent="CanvasLayer2" unique_id=216770527]
 scroll_scale = Vector2(0, 1)
 repeat_size = Vector2(512, 0)
 repeat_times = 17
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=381575625]
+[node name="Control" type="Control" parent="CanvasLayer2" unique_id=2088323564]
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2/Control" unique_id=381575625]
 modulate = Color(1, 1, 1, 0.5019608)
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_mvpoi")
-position = Vector2(127.295, 0)
+scale = Vector2(6, 6)
 texture = ExtResource("7_245nl")
-centered = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2051116429]
 offset = Vector2(0, 74)
-zoom = Vector2(20, 20)
+zoom = Vector2(6, 6)
 script = ExtResource("8_p6cj1")

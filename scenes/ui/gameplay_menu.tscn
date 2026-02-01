@@ -7,11 +7,9 @@
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
-
-[sub_resource type="Resource" id="Resource_22ibf"]
-script = ExtResource("2_88qrp")
-operation = 1
-metadata/_custom_type_script = "uid://cubddekf200ah"
+[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="6_6p0e4"]
+[ext_resource type="Texture2D" uid="uid://c7noamb7sr4py" path="res://assets/pixel_art/characters/stocker.png" id="7_5jsv3"]
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
 script = ExtResource("2_88qrp")
@@ -25,123 +23,175 @@ operation = 1
 bitmask = 42
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
-[node name="GameplayMenu" type="Control" unique_id=1587044335 node_paths=PackedStringArray("starts", "ends", "containers")]
+[sub_resource type="Resource" id="Resource_22ibf"]
+script = ExtResource("2_88qrp")
+operation = 1
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[node name="GameplayMenu" type="Control" unique_id=1587044335 node_paths=PackedStringArray("starts", "ends", "containers", "container_left", "container_right", "container_output")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -7.0
-offset_top = 497.0
-offset_right = -7.0
-offset_bottom = 497.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kan1k")
 levels = Array[ExtResource("2_22ibf")]([ExtResource("3_6ih4k"), ExtResource("4_22ibf")])
-starts = [NodePath("StartToEnd/Start"), NodePath("GameplayBox/ScrollContainer/HBoxContainer/OutputContainer/Start")]
-ends = [NodePath("StartToEnd/End"), NodePath("GameplayBox/End")]
-containers = [NodePath("GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"), NodePath("PuzzleBox2/RightContainer")]
+starts = [NodePath("Control/MarginContainer/VBoxContainer/StartToEnd/Start"), NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer/Start")]
+ends = [NodePath("Control/MarginContainer/VBoxContainer/StartToEnd/End"), NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/End")]
+containers = [NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"), NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer")]
+container_left = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/LeftContainer")
+container_right = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer")
+container_output = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer")
 
-[node name="PuzzleBox2" type="ScrollContainer" parent="." unique_id=648647157]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.73020834
-anchor_top = 0.14398149
-anchor_right = 0.99427086
-anchor_bottom = 0.7569444
-metadata/_edit_use_anchors_ = true
-
-[node name="RightContainer" type="VBoxContainer" parent="PuzzleBox2" unique_id=34024247]
-layout_mode = 2
-
-[node name="PuzzlePieceView" parent="PuzzleBox2/RightContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
-layout_mode = 2
-model = SubResource("Resource_22ibf")
-
-[node name="StartToEnd" type="Control" parent="." unique_id=1132341006]
-anchors_preset = 0
-offset_left = 748.0
-offset_top = -139.0
-offset_right = 2873.0
-offset_bottom = 405.0
-
-[node name="Start" parent="StartToEnd" unique_id=338931074 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(750, 250)
-layout_mode = 1
-offset_left = 248.0
-offset_top = 154.0
-offset_right = 921.3511
-offset_bottom = 338.0
-disabled = true
-model = SubResource("Resource_fqw3q")
-
-[node name="End" parent="StartToEnd" unique_id=1103401863 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(750, 250)
-layout_mode = 1
-offset_left = 1099.0
-offset_top = 155.0
-offset_right = 1772.3511
-offset_bottom = 339.0
-disabled = true
-model = SubResource("Resource_wg7ri")
-
-[node name="GameplayBox" type="Control" parent="." unique_id=1989928504]
-anchors_preset = 0
-offset_left = 619.0
-offset_top = 320.0
-offset_right = 1625.0
-offset_bottom = 1424.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="GameplayBox" unique_id=672063978]
+[node name="Placeholder" type="ColorRect" parent="." unique_id=1954985148]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.21769384
-anchor_right = 1.7465209
-anchor_bottom = 0.9126803
-grow_horizontal = 2
-grow_vertical = 2
-follow_focus = true
-horizontal_scroll_mode = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GameplayBox/ScrollContainer" unique_id=1613848470]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="OutputContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer/HBoxContainer" unique_id=1060154652]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="Start" parent="GameplayBox/ScrollContainer/HBoxContainer/OutputContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(750, 250)
-layout_mode = 2
-size_flags_horizontal = 4
-model = SubResource("Resource_fqw3q")
-
-[node name="LeftContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer/HBoxContainer" unique_id=495344684]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="End" parent="GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(750, 250)
-layout_mode = 0
-offset_left = -220.0
-offset_top = 1059.0
-offset_right = 530.0
-offset_bottom = 1309.0
-disabled = true
-model = SubResource("Resource_wg7ri")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1954985148]
 visible = false
-custom_minimum_size = Vector2(750, 250)
+custom_minimum_size = Vector2(750, 175)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0.24705882)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=634245431]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 600.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=621279162]
+handle_input_locally = false
+size = Vector2i(3840, 600)
+render_target_update_mode = 4
+
+[node name="PuzzleBackground" parent="SubViewportContainer/SubViewport" unique_id=655563546 instance=ExtResource("5_6ih4k")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=2114997061]
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/CanvasLayer" unique_id=1953461630]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DeliveryGuy" type="Sprite2D" parent="SubViewportContainer/SubViewport/CanvasLayer/Control" unique_id=334044223]
+texture_filter = 1
+position = Vector2(-200, -72)
+scale = Vector2(6, 6)
+texture = ExtResource("6_6p0e4")
+centered = false
+flip_h = true
+
+[node name="EnemySprite" type="Sprite2D" parent="SubViewportContainer/SubViewport/CanvasLayer/Control" unique_id=2039010479]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(200, -72)
+scale = Vector2(6, 6)
+texture = ExtResource("7_5jsv3")
+centered = false
+
+[node name="Control" type="Control" parent="." unique_id=1254180871]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=2092544513]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=620119704]
+layout_mode = 2
+
+[node name="StartToEnd" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=2094665902]
+layout_mode = 2
+alignment = 1
+
+[node name="Start" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=338931074 instance=ExtResource("1_gw64q")]
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 2
+disabled = true
+model = SubResource("Resource_fqw3q")
+
+[node name="End" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=1103401863 instance=ExtResource("1_gw64q")]
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 2
+disabled = true
+model = SubResource("Resource_wg7ri")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=607950936]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameplayBox" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=963420620]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox" unique_id=672063978]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer" unique_id=1613848470]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="OutputContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer" unique_id=1060154652]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Start" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 2
+size_flags_horizontal = 4
+model = SubResource("Resource_fqw3q")
+
+[node name="LeftContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer" unique_id=495344684]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="End" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 2
+disabled = true
+model = SubResource("Resource_wg7ri")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer" unique_id=294744006]
+custom_minimum_size = Vector2(1050, 0)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="RightContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer" unique_id=34024247]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+
+[node name="PuzzlePieceView" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
+layout_mode = 2
+model = SubResource("Resource_22ibf")
