@@ -1,6 +1,6 @@
 extends PuzzlePieceView
 
-@onready var root: Control = $"../../.." as Control
+@onready var root: Puzzle = $"../../.."
 @onready var container_left: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"
 @onready var container_right: VBoxContainer = $".."
 @onready var container_output: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/OutputContainer"
@@ -56,7 +56,7 @@ func _stop_drag() -> void:
 	reparent(container)
 	if spot != -1:
 		container.move_child(self, spot)
-		rebalance()
+		root.rebalance()
 	
 	placeholder.visible = false
 	placeholder.reparent(root)
@@ -75,23 +75,3 @@ func find_spot() -> int:
 		if mousey < child.position.y + child.size.y:
 			return i
 	return children.size()
-
-func rebalance() -> void:
-	var children_left: Array[Node] = container_left.get_children()
-	var children_output: Array[Node] = container_output.get_children()
-	
-	for i: int in range(children_output.size() -1, 0, -1):
-		children_output[i].queue_free()
-	
-	for i: int in range(0, children_left.size()):
-		if children_left[i] == placeholder:
-			placeholder.visible = false
-			placeholder.reparent(root)
-			continue
-		if children_left[i - 1] == placeholder:
-			placeholder.visible = false
-			placeholder.reparent(root)
-			continue
-		var number_box: NumberBox = container_output.get_child(i)
-		var puzzle_piece: PuzzlePieceView = children_left[i].get_child(0)
-		number_box.do_operation(puzzle_piece.model)

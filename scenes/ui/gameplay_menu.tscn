@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
 
-[sub_resource type="Resource" id="Resource_kan1k"]
+[sub_resource type="Resource" id="Resource_22ibf"]
 script = ExtResource("2_88qrp")
 operation = 1
 metadata/_custom_type_script = "uid://cubddekf200ah"
@@ -55,7 +55,7 @@ layout_mode = 2
 
 [node name="PuzzlePieceView" parent="PuzzleBox2/RightContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
 layout_mode = 2
-model = SubResource("Resource_kan1k")
+model = SubResource("Resource_22ibf")
 
 [node name="StartToEnd" type="Control" parent="." unique_id=1132341006]
 anchors_preset = 0

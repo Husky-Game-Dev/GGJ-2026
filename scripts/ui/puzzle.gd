@@ -47,5 +47,5 @@ func rebalance() -> void:
 			children_left[i].reparent(self)
 			continue
 		var number_box: NumberBox = output.get_child(i)
-		var puzzle_piece: PuzzlePieceView = children_left[i].get_child(0)
+		var puzzle_piece: PuzzlePieceView = children_left[i]
 		number_box.do_operation(puzzle_piece.model)
