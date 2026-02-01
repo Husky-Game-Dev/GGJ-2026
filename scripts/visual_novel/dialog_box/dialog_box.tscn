@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://assets/icon.svg" id="2_xanox"]
 
 [node name="dialog_box" type="Control" unique_id=1003305669]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
