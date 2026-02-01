@@ -99,6 +99,7 @@ anchor_right = 1.7465209
 anchor_bottom = 0.9126803
 grow_horizontal = 2
 grow_vertical = 2
+follow_focus = true
 horizontal_scroll_mode = 0
 metadata/_edit_use_anchors_ = true
 
@@ -123,10 +124,10 @@ size_flags_horizontal = 2
 [node name="End" parent="GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(750, 250)
 layout_mode = 0
-offset_left = -270.0
+offset_left = -220.0
 offset_top = 1059.0
-offset_right = 403.35107
-offset_bottom = 1243.0
+offset_right = 530.0
+offset_bottom = 1309.0
 disabled = true
 model = SubResource("Resource_wg7ri")
 

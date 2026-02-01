@@ -7,6 +7,7 @@ extends Control
 @onready var ends: Array[NumberBox] = [$StartToEnd/End, $GameplayBox/End]
 @onready var containers: Array[BoxContainer] = [$GameplayBox/ScrollContainer/HBoxContainer/LeftContainer, $PuzzleBox2/RightContainer]
 @onready var output: BoxContainer = $GameplayBox/ScrollContainer/HBoxContainer/OutputContainer
+@onready var scroll: ScrollContainer = $GameplayBox/ScrollContainer
 
 var piece_scn: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 
@@ -34,7 +35,7 @@ func _load_level(level: int) -> void:
 	
 	visible = true
 
-func rebalance() -> void:
+func rebalance(spot: int) -> void:
 	var children_left: Array[Node] = containers[0].get_children()
 	var children_output: Array[Node] = output.get_children()
 	
@@ -50,5 +51,14 @@ func rebalance() -> void:
 		var puzzle_piece: PuzzlePieceView = children_left[i]
 		number_box.do_operation(puzzle_piece.model)
 	var last_output: NumberBox = children_output[children_output.size() - 1]
+	
+	await get_tree().create_timer(0).timeout
+	children_output = output.get_children()
+	if spot+1 < children_output.size():
+		spot += 1
+	var new_output: NumberBox = output.get_child(spot) as NumberBox
+	(output.get_child(spot) as NumberBox).grab_focus(true)
+	#scroll.scroll_vertical = 10000
+	#scroll.set_deferred("scroll_vertical", 100000)
 	#if last_output.model.bitmask == end[0].model.bitmask:
 		#print("win")
