@@ -7,12 +7,8 @@ var waiter: Character
 @export
 var chef: Character
 
-# DEBUG CODE TO AUTOMATICALLY START OUR SCENARIO
-# THIS SHOULD BE HANDLED BY THE MAIN GAME LOOP
-func _ready() -> void:
-	run_scenario()
-
 func run_scenario() -> void:
+	character_clear_all()
 	character_add(player, Vector2(-1500, -1000))
 	character_add(chef, Vector2(0, -1000))
 	character_add(waiter, Vector2(1000, -950))

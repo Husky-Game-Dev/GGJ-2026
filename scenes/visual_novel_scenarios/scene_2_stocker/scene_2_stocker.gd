@@ -5,12 +5,8 @@ var player: Character
 @export
 var stocker: Character
 
-# DEBUG CODE TO AUTOMATICALLY START OUR SCENARIO
-# THIS SHOULD BE HANDLED BY THE MAIN GAME LOOP
-func _ready() -> void:
-	run_scenario()
-
 func run_scenario() -> void:
+	character_clear_all()
 	character_add(player, Vector2(-1500, -1000))
 	character_add(stocker, Vector2(500, -650))
 	

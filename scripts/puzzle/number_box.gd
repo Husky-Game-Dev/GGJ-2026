@@ -38,9 +38,9 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 		PuzzlePieceModel.Operation.XOR:
 			output.model.bitmask = model.bitmask ^ amount
 		PuzzlePieceModel.Operation.LEFT_SHIFT:
-			output.model.bitmask = model.bitmask << amount
+			output.model.bitmask = model.bitmask << puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.RIGHT_SHIFT:
-			output.model.bitmask = model.bitmask >> amount
+			output.model.bitmask = model.bitmask >> puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.NOT:
 			var tmp_string: String = String.num_uint64(output.model.bitmask, 2)
 			for i: int in range(tmp_string.length()):

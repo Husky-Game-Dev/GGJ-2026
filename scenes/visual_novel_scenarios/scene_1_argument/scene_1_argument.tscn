@@ -10,7 +10,7 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xvo7"]
 load_path = "res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"
 
-[node name="visual_novel_scenario3" unique_id=1379408549 instance=ExtResource("1_fjl83")]
+[node name="scene_1_argument" unique_id=1379408549 instance=ExtResource("1_fjl83")]
 script = ExtResource("2_d6m0g")
 player = ExtResource("3_72usa")
 waiter = ExtResource("4_7xecq")
