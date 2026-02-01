@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8nxwkkwa7k3q"]
 
 [ext_resource type="Script" uid="uid://u4b20jqcak3a" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
+[ext_resource type="Texture2D" uid="uid://df0n2bgkqka8y" path="res://icon.svg" id="2_fe2o3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sl1te"]
 font_size = 128
@@ -23,6 +24,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.2509804)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1992891558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fe2o3")
+stretch_mode = 5
 
 [node name="TitleLabel" type="Label" parent="." unique_id=938892341]
 layout_mode = 1

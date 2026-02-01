@@ -41,7 +41,10 @@ func _ready() -> void:
 		var options: Array[HBoxContainer] = []
 		for child2: Node in rows.get_children():
 			var option: HBoxContainer = child2 as HBoxContainer
-			options.push_back(option)
+			if option != null:
+				options.push_back(option)
+		if options.is_empty():
+			continue
 		for i: int in options.size():
 			for j: int in range(1, options[i].get_child_count()):
 				var option_value: Control = options[i].get_child(j) as Control

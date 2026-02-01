@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qwcqe")
-tab_rows = [NodePath("TabContainer/General/GeneralRows"), NodePath("TabContainer/Accessibility/AccessibilityRows"), NodePath("TabContainer/Video/VideoRows"), NodePath("TabContainer/Audio/AudioRows")]
+tab_rows = [NodePath("TabContainer/General/GeneralRows"), NodePath("TabContainer/Accessibility/AccessibilityRows"), NodePath("TabContainer/Video/VideoRows"), NodePath("TabContainer/Audio/AudioRows"), NodePath("TabContainer/Credits/CreditsRows")]
 
 [node name="Background" type="ColorRect" parent="." unique_id=620160617]
 layout_mode = 1
@@ -207,6 +207,22 @@ size_flags_stretch_ratio = 1.5
 max_value = 1.0
 step = 0.01
 value = 1.0
+
+[node name="Credits" type="MarginContainer" parent="TabContainer" unique_id=2018229073]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 32
+metadata/_tab_index = 4
+
+[node name="CreditsRows" type="VBoxContainer" parent="TabContainer/Credits" unique_id=784131262]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Credits/CreditsRows" unique_id=1891937946]
+layout_mode = 2
+text = "Credits:"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1669056859]
 visible = false
