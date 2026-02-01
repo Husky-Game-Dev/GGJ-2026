@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
-[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
 [ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="6_6p0e4"]
 [ext_resource type="Texture2D" uid="uid://c7noamb7sr4py" path="res://assets/pixel_art/characters/stocker.png" id="7_5jsv3"]
 [ext_resource type="AudioStream" uid="uid://poyrrarxyakn" path="res://assets/music/ggj_puzzle.mp3" id="11_jwdk4"]
@@ -201,3 +201,24 @@ model = SubResource("Resource_22ibf")
 stream = ExtResource("11_jwdk4")
 volume_db = -25.0
 bus = &"Music"
+
+[node name="WinButton" type="Button" parent="." unique_id=560458300]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.40392157, 1, 0, 1)
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -839.0
+offset_top = -214.0
+offset_right = -89.0
+offset_bottom = -39.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue?"
+
+[connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]

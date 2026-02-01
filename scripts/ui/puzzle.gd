@@ -15,6 +15,9 @@ var scroll: ScrollContainer = %ScrollContainer
 @onready
 var enemy_sprite: Sprite2D = %EnemySprite
 
+@onready
+var button: Button = %WinButton
+
 @export
 var levels: Array[Level] = []
 
@@ -44,6 +47,8 @@ var _music_player: AudioStreamPlayer = $PuzzleMusic
 var piece_scn: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 
 var _original_enemy_sprite_pos: Vector2 = Vector2.ZERO
+
+var no_win_button: bool = false
 
 func _ready() -> void:
 	_original_enemy_sprite_pos = enemy_sprite.position
@@ -81,7 +86,14 @@ func load_level(level: int) -> void:
 	else:
 		enemy_sprite.position = _original_enemy_sprite_pos
 	
+	if output.get_child(1) != null:
+		output.get_child(1).queue_free()
+	var last_output: NumberBox = output.get_child(output.get_children().size() - 1) as NumberBox
+	last_output.modulate = Color(1, 1, 1, 1)
+	var end: NumberBox = %End
+	end.modulate = Color(1, 1, 1, 1)
 	visible = true
+	no_win_button = false
 
 func _process(delta: float) -> void:
 	var children_output: Array[Node] = output.get_children()
@@ -90,9 +102,8 @@ func _process(delta: float) -> void:
 		last_output.modulate = Color(0.85, 0.00, 0.22, 1.00)
 		var end: NumberBox = %End
 		end.modulate = Color(0.85, 0.00, 0.22, 1.00)
-		#OTHER WIN STUFF WOULD GO HEAR
-		#MAYBE HAVE PLAY CLICK TO GO TO NEXT SCREEN
-		puzzle_complete.emit()
+		if !no_win_button:
+			button.visible = true
 
 func rebalance(spot: int) -> void:
 	var children_left: Array[Node] = containers[0].get_children()
@@ -118,3 +129,9 @@ func rebalance(spot: int) -> void:
 	var new_output: NumberBox = output.get_child(spot) as NumberBox
 	# FIXME: This crashes if you drop a puzzle piece on the right side at an index higher than there are puzzle pieces on the left side
 	#(output.get_child(spot) as NumberBox).grab_focus(true)
+
+
+func _on_win_button_pressed() -> void:
+	button.visible = false
+	no_win_button = true
+	puzzle_complete.emit()
