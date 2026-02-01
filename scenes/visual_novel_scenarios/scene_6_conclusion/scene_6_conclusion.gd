@@ -9,11 +9,6 @@ var dining_room: CompressedTexture2D
 @export
 var background: TextureRect
 
-# DEBUG CODE TO AUTOMATICALLY START OUR SCENARIO
-# THIS SHOULD BE HANDLED BY THE MAIN GAME LOOP
-func _ready() -> void:
-	run_scenario()
-
 func run_scenario() -> void:
 	set_background(background, dining_room)
 	
