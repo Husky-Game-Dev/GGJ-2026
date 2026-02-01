@@ -70,12 +70,13 @@ func narrate(dialog: Array[String]) -> void:
 
 	#_dialog_box.display_character_name("")
 	_dialog_box.set_dialog_centered(true)
+	_dialog_box._character_logo_container.visible = false
 	await _dialog_box.set_dialog_visibility(true)
 	await _dialog_box.display_string(dialog)
 
 func speak(character_name: Texture2D, dialog: Array[String]) -> void:
 	_dialog_box.display_character_name(character_name)
-	_dialog_box.set_dialog_centered(false)
+	_dialog_box.set_dialog_centered(false)		
 	await _dialog_box.set_dialog_visibility(true)
 	await _dialog_box.display_string(dialog)
 
