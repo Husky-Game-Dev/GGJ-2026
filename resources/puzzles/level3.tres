@@ -16,6 +16,12 @@ operation = 5
 bits_to_shift = 4
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
+[sub_resource type="Resource" id="Resource_aiknl"]
+script = ExtResource("2_recwg")
+operation = 3
+bitmask = 900
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
 [sub_resource type="Resource" id="Resource_eagja"]
 script = ExtResource("2_recwg")
 operation = 4
@@ -26,12 +32,6 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 script = ExtResource("2_recwg")
 operation = 2
 bitmask = 6
-metadata/_custom_type_script = "uid://cubddekf200ah"
-
-[sub_resource type="Resource" id="Resource_aiknl"]
-script = ExtResource("2_recwg")
-operation = 3
-bitmask = 900
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_6odhy"]
@@ -48,5 +48,5 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 script = ExtResource("3_rn2rl")
 starting_number = SubResource("Resource_6odhy")
 target_number = SubResource("Resource_mcxuv")
-operations = Array[ExtResource("2_recwg")]([SubResource("Resource_recwg"), SubResource("Resource_rn2rl"), SubResource("Resource_eagja"), SubResource("Resource_rqs12"), SubResource("Resource_aiknl")])
+operations = Array[ExtResource("2_recwg")]([SubResource("Resource_recwg"), SubResource("Resource_rn2rl"), SubResource("Resource_aiknl"), SubResource("Resource_eagja"), SubResource("Resource_rqs12")])
 enemy = ExtResource("1_sje8l")
