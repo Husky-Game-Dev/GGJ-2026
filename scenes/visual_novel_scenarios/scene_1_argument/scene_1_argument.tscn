@@ -7,8 +7,6 @@
 [ext_resource type="Resource" uid="uid://cpufy2i17jnmr" path="res://resources/characters/chef.tres" id="5_wkuvp"]
 [ext_resource type="Texture2D" uid="uid://buiig7v78ov2e" path="res://assets/Backgrounds/kitchen_bG.png" id="6_wkuvp"]
 [ext_resource type="Texture2D" uid="uid://lgxrgihnt8o0" path="res://assets/Backgrounds/Dining room v2.png" id="7_0xvo7"]
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xvo7"]
-load_path = "res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex"
 
 [node name="scene_1_argument" unique_id=1379408549 node_paths=PackedStringArray("background") instance=ExtResource("1_fjl83")]
 script = ExtResource("2_d6m0g")
@@ -21,6 +19,3 @@ background = NodePath("background")
 
 [node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("7_0xvo7")
-
-[node name="dialog_box" parent="." index="2" unique_id=2145612105]
-finished_icon = SubResource("CompressedTexture2D_0xvo7")
