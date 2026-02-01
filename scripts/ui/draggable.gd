@@ -11,6 +11,10 @@ var container: Container
 var dragging: bool = false
 var offset: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	# Can't do this in the editor for some reason
+	(get_child(0) as HBoxContainer).mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 func _process(_delta: float) -> void:
 	if dragging:
 		var mouse_pos: Vector2 = root.get_local_mouse_position()
@@ -41,6 +45,7 @@ func _start_drag() -> void:
 	dragging = true
 	container = get_parent() as Container 
 	offset = position - container.get_local_mouse_position()
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	reparent(root)
 	placeholder.reparent(container)
@@ -52,6 +57,7 @@ func _start_drag() -> void:
 func _stop_drag() -> void:
 	dragging = false
 	var spot: int = find_spot()
+	mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	reparent(container)
 	
