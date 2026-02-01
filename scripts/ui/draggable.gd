@@ -60,6 +60,8 @@ func _stop_drag() -> void:
 	
 	if spot != -1:
 		container.move_child(self, spot)
+		if container != Global.active_puzzle.container_left:
+			spot = -1
 		Global.active_puzzle.rebalance(spot)
 
 func _get_threshold() -> float:

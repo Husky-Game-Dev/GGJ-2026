@@ -125,15 +125,15 @@ func rebalance(spot: int) -> void:
 		var number_box: NumberBox = output.get_child(i)
 		var puzzle_piece: PuzzlePieceView = children_left[i]
 		number_box.do_operation(puzzle_piece.model)
-	var last_output: NumberBox = children_output[children_output.size() - 1]
 	
+	if spot == -1:
+		return
 	await get_tree().create_timer(0).timeout
 	children_output = output.get_children()
 	if spot+1 < children_output.size():
 		spot += 1
 	var new_output: NumberBox = output.get_child(spot) as NumberBox
-	# FIXME: This crashes if you drop a puzzle piece on the right side at an index higher than there are puzzle pieces on the left side
-	#(output.get_child(spot) as NumberBox).grab_focus(true)
+	(output.get_child(spot) as NumberBox).grab_focus(true)
 
 
 func _on_win_button_pressed() -> void:
