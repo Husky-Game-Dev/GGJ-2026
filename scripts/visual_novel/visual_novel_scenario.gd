@@ -47,6 +47,9 @@ func character_remove(character: Character) -> void:
 
 func character_clear_all() -> void:
 	_character_sprite_container.clear()
+	
+func set_background(background: TextureRect, image: CompressedTexture2D) -> void:
+	background.texture = image
 
 ### Dialog box functions
 func show_dialog_box() -> void:

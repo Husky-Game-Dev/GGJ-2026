@@ -6,12 +6,17 @@
 [ext_resource type="Resource" uid="uid://cdapcxaxsjy2g" path="res://resources/characters/dishwasher.tres" id="4_emrns"]
 [ext_resource type="Resource" uid="uid://bujgfjadt2ejn" path="res://resources/characters/stocker.tres" id="5_djbx5"]
 [ext_resource type="Texture2D" uid="uid://lgxrgihnt8o0" path="res://assets/Backgrounds/Dining room v2.png" id="5_kox35"]
+[ext_resource type="Texture2D" uid="uid://bds2h7ctpdffl" path="res://assets/Backgrounds/Loading_dock.png" id="6_aqa38"]
+[ext_resource type="Texture2D" uid="uid://c6lvcg5tuafe1" path="res://assets/Backgrounds/Dishes_Room_v2.png" id="6_djbx5"]
 
-[node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_lohqe")]
+[node name="visual_novel_scenario" unique_id=1379408549 node_paths=PackedStringArray("background") instance=ExtResource("1_lohqe")]
 script = ExtResource("2_emrns")
 player = ExtResource("3_10dpu")
 dishwasher = ExtResource("4_emrns")
 stocker = ExtResource("5_djbx5")
+conclusion_texture = ExtResource("6_aqa38")
+scene_texture = ExtResource("6_djbx5")
+background = NodePath("background")
 
 [node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("5_kox35")
