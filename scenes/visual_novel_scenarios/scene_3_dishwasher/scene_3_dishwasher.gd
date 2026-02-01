@@ -6,6 +6,12 @@ var player: Character
 var dishwasher: Character
 @export
 var stocker: Character
+@export
+var conclusion_texture: CompressedTexture2D
+@export
+var scene_texture: CompressedTexture2D
+@export
+var background: TextureRect
 
 
 func run_scenario() -> void:
@@ -14,6 +20,7 @@ func run_scenario() -> void:
 	
 	#Stocker Conclusion
 	character_add(stocker, Vector2(500, -650))
+	set_background(background, conclusion_texture)
 	
 	await character_speak(stocker, [ "Thats right. Oil is good for me. Why should I be ashamed to have a treat every once an a while?" ])
 	await character_speak(player, [ "Thats the spirit!" ])
@@ -23,7 +30,8 @@ func run_scenario() -> void:
 	
 	# Dishwasher Dialogue
 	character_add(dishwasher, Vector2(850, -400))
-	
+	set_background(background, scene_texture)
+
 	await character_speak(dishwasher, [ "Hey, you come from the outside don’t you? What's it like out there?" ])
 	await character_speak(player, [ "You’ve never seen it?" ])
 	await character_speak(dishwasher, [ "Only what I can see from the trash bins…" ])

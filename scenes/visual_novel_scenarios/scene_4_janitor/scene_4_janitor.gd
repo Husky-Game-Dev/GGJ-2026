@@ -6,6 +6,12 @@ var player: Character
 var janitor: Character
 @export
 var dishwasher: Character
+@export
+var conclusion_texture: CompressedTexture2D
+@export
+var scene_texture: CompressedTexture2D
+@export
+var background: TextureRect
 
 func run_scenario() -> void:
 	character_clear_all()
@@ -13,6 +19,7 @@ func run_scenario() -> void:
 	
 	#Dishwasher Conclusion
 	character_add(dishwasher, Vector2(850, -400))
+	set_background(background, conclusion_texture)
 	
 	await character_speak(dishwasher, [ "Come here squirrel squirrel squirrel." ])
 	await character_speak(dishwasher, [ "Thanks again for all your help! The poor guy never gets a bite to eat out there." ])
@@ -22,6 +29,7 @@ func run_scenario() -> void:
 	
 	# Janitor Dialogue
 	character_add(janitor, Vector2(500, -350))
+	set_background(background, scene_texture)
 	
 	await character_speak(janitor, [ "Hey, you’re the one that delivers stuff right?" ])
 	await character_speak(player, [ "That's me!" ])
