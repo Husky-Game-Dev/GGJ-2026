@@ -6,6 +6,12 @@ var player: Character
 var waiter: Character
 @export
 var janitor: Character
+@export
+var conclusion_texture: CompressedTexture2D
+@export
+var scene_texture: CompressedTexture2D
+@export
+var background: TextureRect
 
 func run_scenario() -> void:
 	character_clear_all()
@@ -13,9 +19,10 @@ func run_scenario() -> void:
 	
 	#Janitor Conclusion
 	character_add(janitor, Vector2(500, -350))
+	set_background(background, conclusion_texture)
 	
 	await character_speak(janitor, [ "In that case, I'll have a Ring of the Lords watch party with everyone!" ])
-	await character_speak(janitor, [ "Too bad we only get two hours of rest. It might take a while to watch the extended edition." ])
+	await character_speak(janitor, [ "Too bad we only get four hours of rest. It might take a while to watch the extended edition." ])
 	await character_speak(janitor, [ "Anyway... The last robot you need to convice is the Waiter." ])
 	await character_speak(janitor, [ "Good luck..." ])
 
@@ -23,6 +30,7 @@ func run_scenario() -> void:
 	
 	# Waiter Dialogue
 	character_add(waiter, Vector2(1000, -950))
+	set_background(background, scene_texture)
 	
 	await character_speak(waiter, [ "I don’t have time to talk, our guests will be here any second!" ])
 	await character_speak(player, [ "You haven’t had guests in years, the humans are dead." ])

@@ -6,12 +6,16 @@
 [ext_resource type="Resource" uid="uid://ccetcoypssobo" path="res://resources/characters/janitor.tres" id="4_q1pdf"]
 [ext_resource type="Texture2D" uid="uid://lgxrgihnt8o0" path="res://assets/Backgrounds/Dining room v2.png" id="5_ijhye"]
 [ext_resource type="Resource" uid="uid://cdapcxaxsjy2g" path="res://resources/characters/dishwasher.tres" id="5_q0ycp"]
+[ext_resource type="Texture2D" uid="uid://c6lvcg5tuafe1" path="res://assets/Backgrounds/Dishes_Room_v2.png" id="6_nkd4d"]
 
-[node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_8fa3x")]
+[node name="visual_novel_scenario" unique_id=1379408549 node_paths=PackedStringArray("background") instance=ExtResource("1_8fa3x")]
 script = ExtResource("2_i8j5l")
 player = ExtResource("3_w34ar")
 janitor = ExtResource("4_q1pdf")
 dishwasher = ExtResource("5_q0ycp")
+conclusion_texture = ExtResource("6_nkd4d")
+scene_texture = ExtResource("5_ijhye")
+background = NodePath("background")
 
 [node name="background" parent="." index="0" unique_id=23887587]
 texture = ExtResource("5_ijhye")

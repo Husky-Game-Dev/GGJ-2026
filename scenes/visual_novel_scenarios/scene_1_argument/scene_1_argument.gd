@@ -6,6 +6,13 @@ var player: Character
 var waiter: Character
 @export
 var chef: Character
+@export
+var conclusion_texture: CompressedTexture2D
+@export
+var scene_texture: CompressedTexture2D
+@export
+var background: TextureRect
+
 
 func run_scenario() -> void:
 	character_clear_all()
@@ -14,6 +21,7 @@ func run_scenario() -> void:
 	character_add(waiter, Vector2(1000, -950))
 	
 	# Argument between Chef and Waiter Dialogue
+	set_background(background, scene_texture)
 	
 	await character_speak(waiter, [ "We need these dishes out here right now!" ])
 	await character_speak(chef, [ "I’ve been in the kitchen all week, can’t I just rest my grills for a second?" ])
