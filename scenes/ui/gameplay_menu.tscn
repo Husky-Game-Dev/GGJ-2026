@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qjsu2w1epg5i" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
 [ext_resource type="Script" uid="uid://dhn1vutyyfnor" path="res://scripts/ui/puzzle.gd" id="1_kan1k"]
-[ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="2_22ibf"]
+[ext_resource type="Script" path="res://scripts/puzzle/level.gd" id="2_22ibf"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_88qrp"]
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
@@ -119,7 +119,6 @@ model = SubResource("Resource_fqw3q")
 [node name="LeftContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer/HBoxContainer" unique_id=495344684]
 layout_mode = 2
 size_flags_horizontal = 2
-theme_override_constants/separation = 0
 
 [node name="End" parent="GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(750, 250)

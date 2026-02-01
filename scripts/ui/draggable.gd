@@ -54,12 +54,13 @@ func _stop_drag() -> void:
 	var spot: int = find_spot()
 	
 	reparent(container)
-	if spot != -1:
-		container.move_child(self, spot)
-		root.rebalance()
 	
 	placeholder.visible = false
 	placeholder.reparent(root)
+	
+	if spot != -1:
+		container.move_child(self, spot)
+		root.rebalance()
 
 func _get_threshold() -> float:
 	var left_edge: float = container_left.global_position.x + container_left.size.x
