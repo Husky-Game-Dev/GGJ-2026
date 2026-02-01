@@ -25,6 +25,7 @@ func set_model(new_model: PuzzlePieceModel) -> void:
 		value_label.text = ("%0*d" % [PuzzlePieceModel.MAX_BITS - value_label.text.length(),0]) + (String.num_uint64(model.bitmask, 2))
 
 func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
+	var bitmask: int = (1 << PuzzlePieceModel.MAX_BITS) - 1
 	var operation: PuzzlePieceModel.Operation = puzzle_piece.operation
 	var amount: int = puzzle_piece.bitmask
 	var output: NumberBox = number_box_scene.instantiate()
@@ -53,5 +54,6 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 			# This should leave our desired bits inverted, while the rest of the integer remains untouched
 			#output.model.bitmask = ~model.bitmask
 			#output.model.bitmask &= not_mask
+	output.model.bitmask &= bitmask
 	output.custom_minimum_size = self.custom_minimum_size
 	add_sibling(output)
