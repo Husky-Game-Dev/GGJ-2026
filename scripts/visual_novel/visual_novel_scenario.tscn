@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjidr04ehrb23" path="res://scripts/visual_novel/character_sprites/character_sprite_container.gd" id="1_os250"]
 [ext_resource type="PackedScene" uid="uid://cpmcq4lihgne5" path="res://scripts/visual_novel/dialog_box/dialog_box.tscn" id="2_jibvp"]
-[ext_resource type="Texture2D" uid="uid://bycdlvhpt3vg" path="res://assets/icon.svg" id="2_lc2vy"]
+[ext_resource type="PackedScene" uid="uid://vdc750tg873e" path="res://scripts/visual_novel/character_sprites/character_sprite.tscn" id="2_os250"]
 
 [node name="visual_novel_scenario" type="Control" unique_id=1379408549]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="character_sprite_container" type="Control" parent="." unique_id=1093418518 node_paths=PackedStringArray("character_sprite_prefab")]
+[node name="character_sprite_container" type="Control" parent="." unique_id=1093418518]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -21,25 +21,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_os250")
-character_sprite_prefab = NodePath("character_sprite")
+character_sprite_prefab = ExtResource("2_os250")
 metadata/_custom_type_script = "uid://bjidr04ehrb23"
-
-[node name="character_sprite" type="TextureRect" parent="character_sprite_container" unique_id=775705302]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -313.77002
-offset_top = -1160.0
-offset_right = 686.22754
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("2_lc2vy")
-expand_mode = 4
-stretch_mode = 4
 
 [node name="dialog_box" parent="." unique_id=2145612105 instance=ExtResource("2_jibvp")]
 unique_name_in_owner = true

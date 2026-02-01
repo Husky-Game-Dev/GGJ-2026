@@ -7,9 +7,6 @@ custom_minimum_size = Vector2(1000, 250)
 offset_right = 80.0
 offset_bottom = 20.0
 script = ExtResource("1_vowo4")
-show_sort_buttons = null
-can_sort_up = null
-can_sort_down = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1690885798]
 layout_mode = 1

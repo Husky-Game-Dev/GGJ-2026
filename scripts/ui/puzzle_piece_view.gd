@@ -40,7 +40,6 @@ var can_sort_down: bool = true:
 		if is_instance_valid(sort_down_button):
 			sort_down_button.disabled = !can_sort_down
 
-
 func _ready() -> void:
 	assert(model != null, "PuzzlePieceView was instantiated without a PuzzlePieceModel assigned")
 	assert(model.operation != PuzzlePieceModel.Operation.NONE, "PuzzlePieceView was instantiated with a PuzzlePieceModel with an unset operation")
@@ -69,13 +68,9 @@ func _ready() -> void:
 			operation_label.text = "~"
 	match model.operation:
 		PuzzlePieceModel.Operation.AND, PuzzlePieceModel.Operation.OR, PuzzlePieceModel.Operation.XOR:
-			var formatted_bits: String = ""
-			for i: int in range(PuzzlePieceModel.MAX_BITS - 1, -1, -1):
-				if (model.bitmask & (1 << i)) != 0:
-					formatted_bits += "1"
-				else:
-					formatted_bits += "0"
-			value_label.text = formatted_bits
+			value_label.text = String.num_uint64(model.bitmask, 2)
+			if (!value_label.text.length() >= PuzzlePieceModel.MAX_BITS):
+				value_label.text = ("%0*d" % [PuzzlePieceModel.MAX_BITS - value_label.text.length(),0]) + (String.num_uint64(model.bitmask, 2))
 		PuzzlePieceModel.Operation.LEFT_SHIFT, PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			value_label.text = "%d" % model.bits_to_shift
 		_:

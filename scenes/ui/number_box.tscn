@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://clorb8ux0my63"]
+
+[ext_resource type="Script" uid="uid://dpuqypunaj1qw" path="res://scenes/ui/number_box.gd" id="1_2wxvw"]
+
+[node name="NumberBox" type="Button" unique_id=338931074]
+anchors_preset = -1
+offset_right = 838.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2wxvw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=219393587]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ValueLabel" type="Label" parent="HBoxContainer" unique_id=653024656]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "00000000"
+horizontal_alignment = 1
