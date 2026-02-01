@@ -1,0 +1,83 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://cc1j13mirgygl"]
+
+[ext_resource type="Resource" uid="uid://bmr03j3bpq0b6" path="res://resources/characters/waiter.tres" id="1_6j4s6"]
+[ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_gpvb6"]
+[ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="3_oc51g"]
+
+[sub_resource type="Resource" id="Resource_gpvb6"]
+script = ExtResource("2_gpvb6")
+operation = 5
+bits_to_shift = 5
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_oc51g"]
+script = ExtResource("2_gpvb6")
+operation = 2
+bitmask = 31
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_qmvnv"]
+script = ExtResource("2_gpvb6")
+operation = 3
+bitmask = 10
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_6j4s6"]
+script = ExtResource("2_gpvb6")
+operation = 1
+bitmask = 40959
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_t6ekg"]
+script = ExtResource("2_gpvb6")
+operation = 6
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_0s14g"]
+script = ExtResource("2_gpvb6")
+operation = 3
+bitmask = 65535
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_mo2y7"]
+resource_name = "false1"
+script = ExtResource("2_gpvb6")
+operation = 1
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_ldne5"]
+resource_name = "false2"
+script = ExtResource("2_gpvb6")
+operation = 4
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_wdjg4"]
+resource_name = "false3"
+script = ExtResource("2_gpvb6")
+operation = 3
+bitmask = 21845
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_87r3b"]
+resource_name = "false4"
+script = ExtResource("2_gpvb6")
+operation = 1
+bitmask = 65280
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_6odhy"]
+script = ExtResource("2_gpvb6")
+bitmask = 9700
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_gu6cc"]
+script = ExtResource("2_gpvb6")
+bitmask = 24885
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[resource]
+script = ExtResource("3_oc51g")
+starting_number = SubResource("Resource_6odhy")
+target_number = SubResource("Resource_gu6cc")
+operations = Array[ExtResource("2_gpvb6")]([SubResource("Resource_gpvb6"), SubResource("Resource_oc51g"), SubResource("Resource_qmvnv"), SubResource("Resource_6j4s6"), SubResource("Resource_t6ekg"), SubResource("Resource_0s14g"), SubResource("Resource_mo2y7"), SubResource("Resource_ldne5"), SubResource("Resource_wdjg4"), SubResource("Resource_87r3b")])
+enemy = ExtResource("1_6j4s6")
