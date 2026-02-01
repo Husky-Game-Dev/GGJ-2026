@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf51jgh1j1vf2"
-path="res://.godot/imported/waiter_art.png-41245bdc7fe574c1dc4d51dcfca90b40.ctex"
+uid="uid://0t45aqmfw53v"
+path="res://.godot/imported/dishwasher_art.png-9f70256de37a1b89c692ad232e9c5c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character_art/waiter_art.png"
-dest_files=["res://.godot/imported/waiter_art.png-41245bdc7fe574c1dc4d51dcfca90b40.ctex"]
+source_file="res://assets/character_art/dishwasher_art.png"
+dest_files=["res://.godot/imported/dishwasher_art.png-9f70256de37a1b89c692ad232e9c5c9d.ctex"]
 
 [params]
 
