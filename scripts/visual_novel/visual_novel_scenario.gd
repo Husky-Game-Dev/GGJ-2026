@@ -22,6 +22,9 @@ var _dialog_box: DialogBox = %dialog_box
 @onready
 var _character_sprite_container: CharacterSpriteContainer = %character_sprite_container
 
+@onready
+var _music_player: AudioStreamPlayer = %music_player
+
 ###
 ### Methods
 ###
@@ -76,3 +79,10 @@ func speak(character_name: Texture2D, dialog: Array[String]) -> void:
 func extend(dialog: Array[String]) -> void:
 	await _dialog_box.set_dialog_visibility(true)
 	await _dialog_box.extend_string(dialog)
+
+### Music
+func _ready() -> void:
+	visibility_changed.connect(_on_visibility_changed)
+
+func _on_visibility_changed() -> void:
+	_music_player.playing = visible
