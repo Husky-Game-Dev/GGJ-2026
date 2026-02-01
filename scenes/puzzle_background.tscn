@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://c4hncxmetod3d"]
+
+[ext_resource type="Texture2D" uid="uid://du3mn78wahyrb" path="res://assets/pixel_art/background/layer_7.png" id="1_1rqmn"]
+[ext_resource type="Texture2D" uid="uid://cskwgia1djmxj" path="res://assets/pixel_art/background/layer_6.png" id="2_p1ivv"]
+[ext_resource type="Texture2D" uid="uid://ddfr3ca4j3vyh" path="res://assets/pixel_art/background/layer_5.png" id="3_f4a4m"]
+[ext_resource type="Texture2D" uid="uid://dfja7wjg3ek7j" path="res://assets/pixel_art/background/layer_4.png" id="4_uw6br"]
+[ext_resource type="Texture2D" uid="uid://hp7xttk11acn" path="res://assets/pixel_art/background/layer_3.png" id="5_pclcj"]
+[ext_resource type="Texture2D" uid="uid://ba23hkn71opah" path="res://assets/pixel_art/background/layer_2.png" id="6_qurf5"]
+[ext_resource type="Texture2D" uid="uid://cuop0lt67rprv" path="res://assets/pixel_art/background/layer_1.png" id="7_245nl"]
+[ext_resource type="Script" uid="uid://c8jutf1air8f3" path="res://scripts/parallax_camera.gd" id="8_p6cj1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ngyty"]
+blend_mode = 3
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rbkea"]
+blend_mode = 3
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mvpoi"]
+blend_mode = 1
+
+[node name="PuzzleBackground" type="Node2D" unique_id=655563546]
+process_mode = 3
+
+[node name="Parallax2D7" type="Parallax2D" parent="." unique_id=392639214]
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D7" unique_id=871961560]
+texture_filter = 1
+position = Vector2(127.295, 0)
+texture = ExtResource("1_1rqmn")
+centered = false
+
+[node name="Parallax2D6" type="Parallax2D" parent="." unique_id=1140909772]
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D6" unique_id=1177258846]
+texture_filter = 1
+position = Vector2(127.295, 0)
+texture = ExtResource("2_p1ivv")
+centered = false
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=706238807]
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5" unique_id=1552892616]
+texture_filter = 1
+position = Vector2(127.295, 0)
+texture = ExtResource("3_f4a4m")
+centered = false
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=600450370]
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1473817866]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ngyty")
+position = Vector2(127.295, 0)
+texture = ExtResource("4_uw6br")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=371996343]
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=1653786243]
+modulate = Color(1, 1, 1, 0.69803923)
+texture_filter = 1
+position = Vector2(127.295, 0)
+texture = ExtResource("5_pclcj")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1086510388]
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=404359323]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_rbkea")
+position = Vector2(127.295, 0)
+texture = ExtResource("6_qurf5")
+centered = false
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=216770527]
+scroll_scale = Vector2(0, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=381575625]
+modulate = Color(1, 1, 1, 0.5019608)
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_mvpoi")
+position = Vector2(127.295, 0)
+texture = ExtResource("7_245nl")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2051116429]
+offset = Vector2(0, 74)
+zoom = Vector2(20, 20)
+script = ExtResource("8_p6cj1")
