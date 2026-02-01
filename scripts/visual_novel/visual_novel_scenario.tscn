@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bxu4lyv1gie46"]
 
+[ext_resource type="Texture2D" uid="uid://df0n2bgkqka8y" path="res://icon.svg" id="1_drox3"]
 [ext_resource type="Script" uid="uid://bjidr04ehrb23" path="res://scripts/visual_novel/character_sprites/character_sprite_container.gd" id="1_os250"]
 [ext_resource type="PackedScene" uid="uid://cpmcq4lihgne5" path="res://scripts/visual_novel/dialog_box/dialog_box.tscn" id="2_jibvp"]
 [ext_resource type="PackedScene" uid="uid://vdc750tg873e" path="res://scripts/visual_novel/character_sprites/character_sprite.tscn" id="2_os250"]
@@ -11,6 +12,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=23887587]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 3841.0
+offset_bottom = 2166.0
+texture = ExtResource("1_drox3")
+stretch_mode = 6
 
 [node name="character_sprite_container" type="Control" parent="." unique_id=1093418518]
 unique_name_in_owner = true
