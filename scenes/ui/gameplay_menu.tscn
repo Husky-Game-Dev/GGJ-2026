@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dhrj8i0l5iaii"]
+[gd_scene format=3 uid="uid://bh6cymtl5al5j"]
 
 [ext_resource type="PackedScene" uid="uid://qjsu2w1epg5i" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
 [ext_resource type="Script" uid="uid://dhn1vutyyfnor" path="res://scripts/ui/puzzle.gd" id="1_kan1k"]
@@ -7,7 +7,8 @@
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
-[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="Resource" uid="uid://jyljs5kembb7" path="res://resources/puzzles/level3.tres" id="5_jwdk4"]
 [ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="6_6p0e4"]
 [ext_resource type="Texture2D" uid="uid://c7noamb7sr4py" path="res://assets/pixel_art/characters/stocker.png" id="7_5jsv3"]
 
@@ -38,7 +39,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kan1k")
-levels = Array[ExtResource("2_22ibf")]([ExtResource("3_6ih4k"), ExtResource("4_22ibf")])
+levels = Array[ExtResource("2_22ibf")]([ExtResource("3_6ih4k"), ExtResource("4_22ibf"), ExtResource("5_jwdk4")])
 starts = [NodePath("Control/MarginContainer/VBoxContainer/StartToEnd/Start"), NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer/Start")]
 ends = [NodePath("Control/MarginContainer/VBoxContainer/StartToEnd/End"), NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/End")]
 containers = [NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"), NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer")]

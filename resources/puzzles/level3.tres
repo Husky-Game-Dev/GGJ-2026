@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://jyljs5kembb7"]
+
+[ext_resource type="Resource" uid="uid://cdapcxaxsjy2g" path="res://resources/characters/dishwasher.tres" id="1_sje8l"]
+[ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_recwg"]
+[ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="3_rn2rl"]
+
+[sub_resource type="Resource" id="Resource_recwg"]
+script = ExtResource("2_recwg")
+operation = 1
+bitmask = 28
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_rn2rl"]
+script = ExtResource("2_recwg")
+operation = 5
+bits_to_shift = 4
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_eagja"]
+script = ExtResource("2_recwg")
+operation = 4
+bits_to_shift = 5
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_rqs12"]
+script = ExtResource("2_recwg")
+operation = 2
+bitmask = 6
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_aiknl"]
+script = ExtResource("2_recwg")
+operation = 3
+bitmask = 900
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_6odhy"]
+script = ExtResource("2_recwg")
+bitmask = 32825
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_mcxuv"]
+script = ExtResource("2_recwg")
+bitmask = 54
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[resource]
+script = ExtResource("3_rn2rl")
+starting_number = SubResource("Resource_6odhy")
+target_number = SubResource("Resource_mcxuv")
+operations = Array[ExtResource("2_recwg")]([SubResource("Resource_recwg"), SubResource("Resource_rn2rl"), SubResource("Resource_eagja"), SubResource("Resource_rqs12"), SubResource("Resource_aiknl")])
+enemy = ExtResource("1_sje8l")
