@@ -42,15 +42,13 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 		PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			output.model.bitmask = model.bitmask >> puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.NOT:
-			var not_mask: int = 0
-			for i: int in range(64):
-				var check_mask: int = 1 << i
-				# If this bit is set, our NOT mask should set this bit
-				# and every bit behind us
-				if (model.bitmask & check_mask) != 0:
-					not_mask |= check_mask
-					not_mask |= check_mask - 1
-			# Our NOT mask should now have all bits that actually have a number
+			# Construct a temporary mask that is all the bits we care about
+			# We further OR (bits - 1) to include all possible bits beneath it
+			var not_mask: int = PuzzlePieceModel.MAX_BITS
+			not_mask |= PuzzlePieceModel.MAX_BITS - 1
+			
+			# Perform bitwise NOT, then AND it with the bits we care about
+			# This should leave our desired bits inverted, while the rest of the integer remains untouched
 			output.model.bitmask = ~model.bitmask
 			output.model.bitmask &= not_mask
 	output.custom_minimum_size = self.custom_minimum_size
