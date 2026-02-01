@@ -45,8 +45,8 @@ var _character_name_container: Control = %character_name_container
 var _character_logo_container: TextureRect = %character_logo_container
 
 ## AudioStreamPlayer which will play with every character
-@onready
-var _sfx_audio_player: AudioStreamPlayer = %sfx_player
+#@onready
+#var _sfx_audio_player: AudioStreamPlayer = %sfx_player
 
 ## Previous dialog entry, held in case we need to extend it.
 var _previous_dialog: String = ""
@@ -125,8 +125,8 @@ func _display_string(dialog: String, starting_position: int = 0) -> void:
 		# Show the next character and await the character delay timer
 		_dialog_label.visible_characters += 1
 		
-		if is_instance_valid(_sfx_audio_player):
-			_sfx_audio_player.play()
+		#if is_instance_valid(_sfx_audio_player):
+		#	_sfx_audio_player.play()
 		
 		var timer: SceneTreeTimer = get_tree().create_timer(characterDelay)
 		await timer.timeout

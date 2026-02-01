@@ -204,3 +204,24 @@ model = SubResource("Resource_22ibf")
 stream = ExtResource("11_jwdk4")
 volume_db = -25.0
 bus = &"Music"
+
+[node name="WinButton" type="Button" parent="." unique_id=560458300]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.40392157, 1, 0, 1)
+custom_minimum_size = Vector2(750, 175)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -839.0
+offset_top = -214.0
+offset_right = -89.0
+offset_bottom = -39.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue?"
+
+[connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
