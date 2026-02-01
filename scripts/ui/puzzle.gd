@@ -49,3 +49,6 @@ func rebalance() -> void:
 		var number_box: NumberBox = output.get_child(i)
 		var puzzle_piece: PuzzlePieceView = children_left[i]
 		number_box.do_operation(puzzle_piece.model)
+	var last_output: NumberBox = children_output[children_output.size() - 1]
+	#if last_output.model.bitmask == end[0].model.bitmask:
+		#print("win")
