@@ -10,3 +10,12 @@ var full_sprite: Texture2D = null
 
 @export
 var mini_sprite: Texture2D = null
+
+@export
+var flipped: bool = false
+
+@export
+var scale: Vector2 = Vector2(1, 1)
+
+@export
+var position: Vector2 = Vector2(0, 0)

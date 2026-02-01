@@ -7,4 +7,6 @@
 script = ExtResource("1_ixtk3")
 character_name = "Delivery Driver"
 full_sprite = ExtResource("1_idtff")
+flipped = true
+scale = Vector2(2, 2)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"
