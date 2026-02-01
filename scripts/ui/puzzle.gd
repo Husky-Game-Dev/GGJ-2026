@@ -11,7 +11,7 @@ extends Control
 var piece_scn: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 
 func _ready() -> void:
-	_load_level(0)
+	_load_level(1)
 
 func _load_level(level: int) -> void:
 	if level < 0 or level >= levels.size():

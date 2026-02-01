@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="Level" format=3 uid="uid://buwdv46v3m15k"]
+
+[ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="1_che4v"]
+[ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="2_lak6r"]
+
+[sub_resource type="Resource" id="Resource_kxy76"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 2
+bits_to_shift = 1
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_che4v"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 4
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_lak6r"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 8
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_n44ob"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 16
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_4rhep"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 32
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_j8nux"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 64
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_vhl6h"]
+script = ExtResource("1_che4v")
+operation = 2
+bitmask = 128
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_6odhy"]
+script = ExtResource("1_che4v")
+bitmask = 1
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[sub_resource type="Resource" id="Resource_mcxuv"]
+script = ExtResource("1_che4v")
+bitmask = 255
+metadata/_custom_type_script = "uid://cubddekf200ah"
+
+[resource]
+script = ExtResource("2_lak6r")
+starting_number = SubResource("Resource_6odhy")
+target_number = SubResource("Resource_mcxuv")
+operations = Array[ExtResource("1_che4v")]([SubResource("Resource_kxy76"), SubResource("Resource_che4v"), SubResource("Resource_lak6r"), SubResource("Resource_n44ob"), SubResource("Resource_4rhep"), SubResource("Resource_j8nux"), SubResource("Resource_vhl6h")])
