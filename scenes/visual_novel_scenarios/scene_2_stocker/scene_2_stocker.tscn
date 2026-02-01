@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b1xn1d8ghtxft"]
+
+[ext_resource type="PackedScene" uid="uid://bxu4lyv1gie46" path="res://scripts/visual_novel/visual_novel_scenario.tscn" id="1_c6qou"]
+[ext_resource type="Script" uid="uid://b0wnpthi3f84l" path="res://scenes/visual_novel_scenarios/scene_2_stocker/scene_2_stocker.gd" id="2_qqwai"]
+[ext_resource type="Resource" uid="uid://b7qx53cgm3wk0" path="res://resources/characters/player.tres" id="3_b6wjv"]
+[ext_resource type="Resource" uid="uid://bujgfjadt2ejn" path="res://resources/characters/stocker.tres" id="4_70a0o"]
+
+[node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_c6qou")]
+script = ExtResource("2_qqwai")
+player = ExtResource("3_b6wjv")
+stocker = ExtResource("4_70a0o")
