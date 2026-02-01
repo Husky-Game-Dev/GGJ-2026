@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Character" format=3 uid="uid://cdapcxaxsjy2g"]
+
+[ext_resource type="Texture2D" uid="uid://dju0n3of3v7gf" path="res://assets/character_art/delivery_guy_art.png" id="1_71rdv"]
+[ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="2_7o51w"]
+
+[resource]
+script = ExtResource("2_7o51w")
+character_name = "The Waiter"
+full_sprite = ExtResource("1_71rdv")
+metadata/_custom_type_script = "uid://bamvrpnd4oqyw"

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bnl05ychxeqcb"]
+
+[ext_resource type="PackedScene" uid="uid://bxu4lyv1gie46" path="res://scripts/visual_novel/visual_novel_scenario.tscn" id="1_lohqe"]
+[ext_resource type="Script" uid="uid://0j8cqex4i03c" path="res://scenes/visual_novel_scenarios/scene_3_dishwasher/scene_3_dishwasher.gd" id="2_emrns"]
+[ext_resource type="Resource" uid="uid://b7qx53cgm3wk0" path="res://resources/characters/player.tres" id="3_10dpu"]
+[ext_resource type="Resource" uid="uid://cdapcxaxsjy2g" path="res://resources/characters/dishwasher.tres" id="4_emrns"]
+
+[node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_lohqe")]
+script = ExtResource("2_emrns")
+player = ExtResource("3_10dpu")
+dishwasher = ExtResource("4_emrns")
