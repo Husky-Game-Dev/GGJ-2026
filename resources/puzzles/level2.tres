@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Level" format=3 uid="uid://buwdv46v3m15k"]
 
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="1_che4v"]
-[ext_resource type="Resource" path="res://resources/characters/stocker.tres" id="1_lak6r"]
+[ext_resource type="Resource" uid="uid://bujgfjadt2ejn" path="res://resources/characters/stocker.tres" id="1_lak6r"]
 [ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="2_lak6r"]
 
 [sub_resource type="Resource" id="Resource_kxy76"]

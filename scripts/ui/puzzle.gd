@@ -1,13 +1,23 @@
 class_name Puzzle
 extends Control
 
-@export var levels: Array[Level] = []
+@onready
+var output: BoxContainer = %OutputContainer
 
-@onready var starts: Array[NumberBox] = [$StartToEnd/Start, $GameplayBox/ScrollContainer/HBoxContainer/OutputContainer/Start]
-@onready var ends: Array[NumberBox] = [$StartToEnd/End, $GameplayBox/End]
-@onready var containers: Array[BoxContainer] = [$GameplayBox/ScrollContainer/HBoxContainer/LeftContainer, $PuzzleBox2/RightContainer]
-@onready var output: BoxContainer = $GameplayBox/ScrollContainer/HBoxContainer/OutputContainer
-@onready var scroll: ScrollContainer = $GameplayBox/ScrollContainer
+@onready
+var scroll: ScrollContainer = %ScrollContainer
+
+@export
+var levels: Array[Level] = []
+
+@export
+var starts: Array[NumberBox] = []
+
+@export
+var ends: Array[NumberBox] = []
+
+@export
+var containers: Array[BoxContainer] = []
 
 var piece_scn: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 

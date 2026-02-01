@@ -25,7 +25,7 @@ operation = 1
 bitmask = 42
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
-[node name="GameplayMenu" type="Control" unique_id=1587044335]
+[node name="GameplayMenu" type="Control" unique_id=1587044335 node_paths=PackedStringArray("starts", "ends", "containers")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -40,6 +40,9 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_kan1k")
 levels = Array[ExtResource("2_22ibf")]([ExtResource("3_6ih4k"), ExtResource("4_22ibf")])
+starts = [NodePath("StartToEnd/Start"), NodePath("GameplayBox/ScrollContainer/HBoxContainer/OutputContainer/Start")]
+ends = [NodePath("StartToEnd/End"), NodePath("GameplayBox/End")]
+containers = [NodePath("GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"), NodePath("PuzzleBox2/RightContainer")]
 
 [node name="PuzzleBox2" type="ScrollContainer" parent="." unique_id=648647157]
 layout_mode = 1
@@ -92,6 +95,7 @@ offset_right = 1625.0
 offset_bottom = 1424.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="GameplayBox" unique_id=672063978]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.21769384
@@ -108,6 +112,7 @@ layout_mode = 2
 size_flags_horizontal = 2
 
 [node name="OutputContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer/HBoxContainer" unique_id=1060154652]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
 

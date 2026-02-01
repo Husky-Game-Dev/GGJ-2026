@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bcimic3ke0ulm" path="res://assets/character_art/stocker_art.png" id="1_02gjd"]
 [ext_resource type="Texture2D" uid="uid://bli6rgxfa81k" path="res://assets/ui/Stocker Name.png" id="2_0w22t"]
 [ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="2_02gjd"]
+[ext_resource type="Texture2D" uid="uid://c7noamb7sr4py" path="res://assets/pixel_art/characters/stocker.png" id="3_0w22t"]
 
 [resource]
 script = ExtResource("2_02gjd")
 character_name = "The Stocker"
 full_sprite = ExtResource("1_02gjd")
+mini_sprite = ExtResource("3_0w22t")
 logo = ExtResource("2_0w22t")
 scale = Vector2(1.8, 1.8)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"

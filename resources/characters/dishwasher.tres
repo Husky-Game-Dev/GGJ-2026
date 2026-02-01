@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://0t45aqmfw53v" path="res://assets/character_art/dishwasher_art.png" id="1_7o51w"]
 [ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="2_7o51w"]
 [ext_resource type="Texture2D" uid="uid://cvmg2ixudfngt" path="res://assets/ui/Dishwasher Name.png" id="2_vs5vd"]
+[ext_resource type="Texture2D" uid="uid://crymvp3efyaw7" path="res://assets/pixel_art/characters/dishwasher.png" id="3_vs5vd"]
 
 [resource]
 script = ExtResource("2_7o51w")
 character_name = "The Waiter"
 full_sprite = ExtResource("1_7o51w")
+mini_sprite = ExtResource("3_vs5vd")
 logo = ExtResource("2_vs5vd")
 scale = Vector2(1.5, 1.5)
 metadata/_custom_type_script = "uid://bamvrpnd4oqyw"

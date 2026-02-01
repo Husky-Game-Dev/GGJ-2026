@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dju0n3of3v7gf" path="res://assets/character_art/delivery_guy_art.png" id="1_idtff"]
 [ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="1_ixtk3"]
 [ext_resource type="Texture2D" uid="uid://b0khbrckio4ig" path="res://assets/ui/Delivery Guy Name.png" id="2_68q0r"]
+[ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="3_eiy46"]
 
 [resource]
 script = ExtResource("1_ixtk3")
 character_name = "Delivery Driver"
 full_sprite = ExtResource("1_idtff")
+mini_sprite = ExtResource("3_eiy46")
 logo = ExtResource("2_68q0r")
 flipped = true
 scale = Vector2(2, 2)
