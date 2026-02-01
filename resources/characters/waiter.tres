@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Character" format=3 uid="uid://bmr03j3bpq0b6"]
 
-[ext_resource type="Texture2D" uid="uid://cf51jgh1j1vf2" path="res://assets/character_art/Waiter_art.png" id="1_qod7g"]
+[ext_resource type="Texture2D" uid="uid://cf51jgh1j1vf2" path="res://assets/character_art/waiter_art.png" id="1_qod7g"]
 [ext_resource type="Texture2D" uid="uid://dbk875moruvuw" path="res://assets/ui/Waiter Name.png" id="2_m5swm"]
 [ext_resource type="Script" uid="uid://bamvrpnd4oqyw" path="res://scripts/characters/character.gd" id="2_qod7g"]
 [ext_resource type="Texture2D" uid="uid://b1w4n1cxv1k6w" path="res://assets/pixel_art/characters/waiter.png" id="3_m5swm"]
