@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://qjsu2w1epg5i" path="res://scenes/ui/number_box.tscn" id="1_gw64q"]
 [ext_resource type="Script" uid="uid://crtsynjty4hmc" path="res://scripts/ui/draggable.gd" id="1_igpgf"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_88qrp"]
-[ext_resource type="Script" uid="uid://n4cguax4gn24" path="res://scripts/ui/v_box_container_sizing.gd" id="3_fqw3q"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
 
 [sub_resource type="Resource" id="Resource_igpgf"]
@@ -30,6 +29,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 497.0
+offset_right = -7.0
+offset_bottom = 497.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -104,26 +107,27 @@ offset_bottom = 1424.0
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.26739562
-anchor_right = 1.7604374
+anchor_right = 1.6719682
 anchor_bottom = 0.9126803
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_fqw3q")
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftContainer" type="GridContainer" parent="GameplayBox/ScrollContainer" unique_id=1128122277]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="GameplayBox/ScrollContainer" unique_id=1613848470]
+layout_mode = 2
+
+[node name="OutputContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer/HBoxContainer" unique_id=1060154652]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
-columns = 2
 
-[node name="Start" parent="GameplayBox/ScrollContainer/LeftContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(500, 250)
+[node name="Start" parent="GameplayBox/ScrollContainer/HBoxContainer/OutputContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
+custom_minimum_size = Vector2(1000, 250)
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
 model = SubResource("Resource_fqw3q")
+
+[node name="LeftContainer" type="VBoxContainer" parent="GameplayBox/ScrollContainer/HBoxContainer" unique_id=495344684]
+layout_mode = 2
 
 [node name="End" parent="GameplayBox" unique_id=10623874 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(1020, 250)

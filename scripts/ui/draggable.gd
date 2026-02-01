@@ -1,8 +1,9 @@
 extends Control
 
 @onready var root: Control = $"../../.." as Control
-@onready var container_left: GridContainer = $"../../../GameplayBox/ScrollContainer/LeftContainer"
+@onready var container_left: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/LeftContainer"
 @onready var container_right: VBoxContainer = $".."
+@onready var container_output: VBoxContainer = $"../../../GameplayBox/ScrollContainer/HBoxContainer/OutputContainer"
 @onready var placeholder: ColorRect = $"../../../ColorRect" as ColorRect
 @onready var threshold_x: float = _get_threshold()
 
@@ -71,30 +72,22 @@ func find_spot() -> int:
 	
 	for i: int in range(children.size()):
 		var child: Control = children[i] as Control
-		
-		if container == container_left:
-			var columns: int = container_left.columns
-			if i % columns == 0:
-				continue
 		if mousey < child.position.y + child.size.y:
 			return i
 	return children.size()
 
 func rebalance() -> void:
-	var children: Array[Node] = container_left.get_children()
-	for i: int in range(children.size() -1, 0, -1):
-		if children[i] is NumberBox:
-			children[i].queue_free()
+	var children_left: Array[Node] = container_left.get_children()
+	var children_output: Array[Node] = container_output.get_children()
 	
-	for i: int in range(0, children.size() / 2, 2):
-		if container_left.get_child(i + 1) is NumberBox:
-			container_left.get_child(i + 1).queue_free()
-			return
-		if container_left.get_child(i + 1) == placeholder:
+	for i: int in range(children_output.size() -1, 0, -1):
+		children_output[i].queue_free()
+	
+	for i: int in range(0, children_left.size()):
+		if children_left[i] == placeholder:
 			placeholder.visible = false
 			placeholder.reparent(root)
-		var number_box: NumberBox = container_left.get_child(i)
-		var puzzle_piece: PuzzlePieceView = container_left.get_child(i + 1).get_child(0)
-		var result: NumberBox = number_box.do_operation(puzzle_piece.model)
-		container_left.add_child(result)
-		container_left.move_child(result, i + 2)
+			continue
+		var number_box: NumberBox = container_output.get_child(i)
+		var puzzle_piece: PuzzlePieceView = children_left[i].get_child(0)
+		number_box.do_operation(puzzle_piece.model)
