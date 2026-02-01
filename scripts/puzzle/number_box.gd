@@ -15,7 +15,11 @@ var model: PuzzlePieceModel = null
 
 func _ready() -> void:
 	assert(model != null, "PuzzlePieceView was instantiated without a PuzzlePieceModel assigned")
-	
+	set_model(model)
+
+func set_model(new_model: PuzzlePieceModel) -> void:
+	if new_model:
+		model = new_model
 	value_label.text = String.num_uint64(model.bitmask, 2)
 	if (!value_label.text.length() >= PuzzlePieceModel.MAX_BITS):
 		value_label.text = ("%0*d" % [PuzzlePieceModel.MAX_BITS - value_label.text.length(),0]) + (String.num_uint64(model.bitmask, 2))

@@ -20,9 +20,9 @@ func _load_level(level: int) -> void:
 	else:
 		print("Loading level ", level)
 	for start: NumberBox in starts:
-		start.model = levels[level].starting_number
+		start.set_model(levels[level].starting_number)
 	for end: NumberBox in ends:
-		end.model = levels[level].target_number
+		end.set_model(levels[level].target_number)
 	
 	for container: BoxContainer in containers:
 		for child: Control in container.get_children():
