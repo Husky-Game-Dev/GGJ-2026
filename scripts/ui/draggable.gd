@@ -65,9 +65,8 @@ func _stop_drag() -> void:
 		Global.active_puzzle.rebalance(spot)
 
 func _get_threshold() -> float:
-	var left_edge: float = Global.active_puzzle.container_left.global_position.x + Global.active_puzzle.container_left.size.x
 	var right_edge: float = Global.active_puzzle.container_right.global_position.x
-	return left_edge + ((right_edge - left_edge) / 2.0) + 1000
+	return right_edge
 
 func find_spot() -> int:
 	var mousey: float = container.get_local_mouse_position().y
