@@ -32,7 +32,7 @@ func run_scenario() -> void:
 	# Chef Dialogue
 	
 	await character_speak(chef, ["Everyone around here is so stuck up these days."])
-	await character_speak(chef, ["It’s not like this food goes anywhere, we've stopped getting visitors AGES ago."])
+	await character_speak(chef, ["It’s not like this food goes anywhere, we've stopped getting visitors AGES ago... Ever since the humans went extinct..."])
 	await character_speak(player, ["Then why are you even here? Can’t you just leave this place?"])
 	await character_speak(chef, ["I wish… It's all I have ever known. I can’t just abandon everyone else. 'The show must go on', as they say."])
 	await character_speak(chef, ["Hmm... If you find a way to convince everyone that this place is laughable then I will be forever in your debt. What do you say?"])

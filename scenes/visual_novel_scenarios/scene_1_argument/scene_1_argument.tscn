@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bmr03j3bpq0b6" path="res://resources/characters/waiter.tres" id="4_7xecq"]
 [ext_resource type="Resource" uid="uid://cpufy2i17jnmr" path="res://resources/characters/chef.tres" id="5_wkuvp"]
 
-[node name="visual_novel_scenario" unique_id=1379408549 instance=ExtResource("1_fjl83")]
+[node name="visual_novel_scenario3" unique_id=1379408549 instance=ExtResource("1_fjl83")]
 script = ExtResource("2_d6m0g")
 player = ExtResource("3_72usa")
 waiter = ExtResource("4_7xecq")
