@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://e12enm2ph453"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://cu83445g4dxps" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://c8nxwkkwa7k3q" path="res://scenes/ui/main_menu.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://grox04t28gu2" path="res://scenes/ui/pause_menu.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cqhge3cur1vdk" path="res://scenes/ui/settings_menu.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="5_tefeu"]
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="6_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="7_o6xl0"]
 
 [sub_resource type="Resource" id="Resource_tipki"]
 script = ExtResource("6_o6xl0")
@@ -51,14 +52,22 @@ alignment = 1
 [node name="PLACEHOLDER EXAMPLE" parent="HFlowContainer" unique_id=406523941 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 model = SubResource("Resource_tipki")
+show_sort_buttons = false
+can_sort_up = true
+can_sort_down = true
 
 [node name="PLACEHOLDER EXAMPLE 2" parent="HFlowContainer" unique_id=1893902386 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 model = SubResource("Resource_tefeu")
 show_sort_buttons = true
+can_sort_up = true
+can_sort_down = true
 
 [node name="PLACEHOLDER EXAMPLE 3" parent="HFlowContainer" unique_id=952303143 instance=ExtResource("5_tefeu")]
 layout_mode = 2
 model = SubResource("Resource_o6xl0")
 show_sort_buttons = true
 can_sort_up = false
+can_sort_down = true
+
+[node name="Node2D" parent="." unique_id=655563546 instance=ExtResource("7_o6xl0")]

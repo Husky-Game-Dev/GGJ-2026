@@ -68,9 +68,7 @@ func _ready() -> void:
 			operation_label.text = "~"
 	match model.operation:
 		PuzzlePieceModel.Operation.AND, PuzzlePieceModel.Operation.OR, PuzzlePieceModel.Operation.XOR:
-			value_label.text = String.num_uint64(model.bitmask, 2)
-			if (!value_label.text.length() >= PuzzlePieceModel.MAX_BITS):
-				value_label.text = ("%0*d" % [PuzzlePieceModel.MAX_BITS - value_label.text.length(),0]) + (String.num_uint64(model.bitmask, 2))
+			value_label.text = String.num_uint64(model.bitmask, 2).lpad(PuzzlePieceModel.MAX_BITS, "0")
 		PuzzlePieceModel.Operation.LEFT_SHIFT, PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			value_label.text = "%d" % model.bits_to_shift
 		_:
