@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cc1j13mirgygl" path="res://resources/puzzles/level5.tres" id="7_g0rbq"]
 [ext_resource type="Texture2D" uid="uid://b3l4iip876gwk" path="res://assets/ui/big menu box.png" id="11_bgv53"]
 [ext_resource type="AudioStream" uid="uid://poyrrarxyakn" path="res://assets/music/ggj_puzzle.mp3" id="11_jwdk4"]
+[ext_resource type="FontFile" uid="uid://d4jjmlj2mccev" path="res://assets/ui/fonts/JetBrainsMono-Regular.ttf" id="15_t05xy"]
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
 script = ExtResource("2_88qrp")
@@ -34,6 +35,7 @@ operation = 1
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgv53"]
+font = ExtResource("15_t05xy")
 font_size = 78
 
 [node name="GameplayMenu" type="Control" unique_id=1587044335 node_paths=PackedStringArray("starts", "ends", "containers", "container_left", "container_right", "container_output")]
@@ -223,16 +225,16 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 176.0
-offset_top = 287.0
-offset_right = 722.0
-offset_bottom = 1150.0
-text = "&      AND
-|        OR
-^       XOR
-<<  LEFT_SHIFT
->>  RIGHT_SHIFT
-~     NOT"
+offset_left = 121.0
+offset_top = 284.0
+offset_right = 791.0
+offset_bottom = 959.0
+text = "&  AND
+|  OR
+^  XOR
+<< LEFT_SHIFT
+>> RIGHT_SHIFT
+~  NOT"
 label_settings = SubResource("LabelSettings_bgv53")
 
 [node name="PuzzleMusic" type="AudioStreamPlayer" parent="." unique_id=2110700416]
