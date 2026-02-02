@@ -21,6 +21,7 @@
 [ext_resource type="FontVariation" uid="uid://b1dwhyhocw4xe" path="res://assets/ui/fonts/rift_shop_italic.tres" id="11_ynyh7"]
 [ext_resource type="FontFile" uid="uid://d4jjmlj2mccev" path="res://assets/ui/fonts/JetBrainsMono-Regular.ttf" id="12_650ll"]
 [ext_resource type="Texture2D" uid="uid://di26fjpryd5ee" path="res://assets/ui/initial Number.png" id="13_5vjy4"]
+[ext_resource type="Texture2D" uid="uid://bfo6io2ssjefd" path="res://assets/ui/results_chip.png" id="14_x5jkt"]
 [ext_resource type="Texture2D" uid="uid://bbvmmqjfg24fb" path="res://assets/ui/Operand_chip.png" id="15_571rs"]
 [ext_resource type="Texture2D" uid="uid://828uab4sbtk1" path="res://assets/ui/Results flipped.png" id="19_bgkpm"]
 [ext_resource type="Texture2D" uid="uid://cowynooqafuna" path="res://assets/ui/Target Number.png" id="19_ynyh7"]
@@ -261,19 +262,30 @@ expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgkpm"]
-texture = ExtResource("14_x5jkt")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgkpm"]
+load_path = "res://.godot/imported/results_chip.png-e2c2895688e3fd1dd0714fd9b40527f6.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30uav"]
-content_margin_left = 45.0
-content_margin_top = 45.0
-content_margin_right = 45.0
-content_margin_bottom = 45.0
-texture = ExtResource("19_bgkpm")
+content_margin_left = 80.0
+content_margin_top = 60.0
+content_margin_right = 80.0
+content_margin_bottom = 60.0
+texture = SubResource("CompressedTexture2D_bgkpm")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jrssp"]
+content_margin_left = 80.0
+content_margin_top = 60.0
+content_margin_right = 80.0
+content_margin_bottom = 60.0
 texture = ExtResource("19_bgkpm")
-modulate_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i70dn"]
+content_margin_left = 80.0
+content_margin_top = 60.0
+content_margin_right = 80.0
+content_margin_bottom = 60.0
+texture = ExtResource("14_x5jkt")
+modulate_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3cghe"]
 texture = ExtResource("19_bgkpm")
@@ -540,13 +552,12 @@ InitBox/styles/normal = SubResource("StyleBoxTexture_jq4af")
 Label/font_sizes/font_size = 64
 Label/fonts/font = ExtResource("9_j5sbq")
 LargeButton/base_type = &"Button"
-LargeButton/font_sizes/font_size = 75
-LargeButton/fonts/font = ExtResource("9_j5sbq")
+LargeButton/font_sizes/font_size = 80
 LargeButton/styles/disabled = SubResource("StyleBoxFlat_c2hpf")
 LargeButton/styles/focus = SubResource("StyleBoxFlat_vg300")
-LargeButton/styles/hover = SubResource("StyleBoxTexture_bgkpm")
-LargeButton/styles/normal = SubResource("StyleBoxTexture_30uav")
-LargeButton/styles/pressed = SubResource("StyleBoxTexture_jrssp")
+LargeButton/styles/hover = SubResource("StyleBoxTexture_30uav")
+LargeButton/styles/normal = SubResource("StyleBoxTexture_jrssp")
+LargeButton/styles/pressed = SubResource("StyleBoxTexture_i70dn")
 MarginContainer/constants/margin_bottom = 0
 MarginContainer/constants/margin_left = 0
 MarginContainer/constants/margin_right = 0
