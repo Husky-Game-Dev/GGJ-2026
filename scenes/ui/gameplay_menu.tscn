@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cc1j13mirgygl" path="res://resources/puzzles/level5.tres" id="7_g0rbq"]
 [ext_resource type="Texture2D" uid="uid://b3l4iip876gwk" path="res://assets/ui/big menu box.png" id="11_bgv53"]
 [ext_resource type="AudioStream" uid="uid://poyrrarxyakn" path="res://assets/music/ggj_puzzle.mp3" id="11_jwdk4"]
+[ext_resource type="Texture2D" uid="uid://b5xhtw6iefus8" path="res://assets/ui/ui_hint.png" id="15_7vv14"]
 [ext_resource type="FontFile" uid="uid://d4jjmlj2mccev" path="res://assets/ui/fonts/JetBrainsMono-Regular.ttf" id="15_t05xy"]
 
 [sub_resource type="Resource" id="Resource_fqw3q"]
@@ -36,7 +37,7 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="LabelSettings" id="LabelSettings_bgv53"]
 font = ExtResource("15_t05xy")
-font_size = 78
+font_size = 66
 
 [node name="GameplayMenu" type="Control" unique_id=1587044335 node_paths=PackedStringArray("starts", "ends", "containers", "container_left", "container_right", "container_output")]
 process_mode = 3
@@ -144,6 +145,7 @@ alignment = 1
 [node name="Start" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=338931074 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(750, 175)
 layout_mode = 2
+theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_fqw3q")
 
@@ -154,6 +156,7 @@ text = "INIT // TARGET"
 [node name="End" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=1103401863 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(750, 175)
 layout_mode = 2
+theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_wg7ri")
 
@@ -186,6 +189,7 @@ size_flags_horizontal = 2
 custom_minimum_size = Vector2(750, 175)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_type_variation = &""
 model = SubResource("Resource_fqw3q")
 
 [node name="LeftContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer" unique_id=495344684]
@@ -204,6 +208,7 @@ layout_mode = 2
 
 [node name="PuzzlePieceView" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
 layout_mode = 2
+theme_type_variation = &""
 model = SubResource("Resource_22ibf")
 
 [node name="End" parent="Control" unique_id=10623874 instance=ExtResource("1_gw64q")]
@@ -217,24 +222,26 @@ offset_left = 50.0
 offset_top = -144.0
 offset_right = 793.0
 offset_bottom = -29.0
+grow_vertical = 0
+theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_wg7ri")
+
+[node name="UiHint" type="Sprite2D" parent="Control" unique_id=1585740138]
+visible = false
+position = Vector2(2266, 884)
+texture = ExtResource("15_7vv14")
 
 [node name="Label" type="Label" parent="Control" unique_id=941327608]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 121.0
-offset_top = 284.0
-offset_right = 791.0
-offset_bottom = 959.0
-text = "&  AND
-|  OR
-^  XOR
-<< LEFT_SHIFT
->> RIGHT_SHIFT
-~  NOT"
+offset_left = -1851.0
+offset_top = 92.0
+offset_right = -821.0
+offset_bottom = 231.0
+text = "[pause to check notes]"
 label_settings = SubResource("LabelSettings_bgv53")
 
 [node name="PuzzleMusic" type="AudioStreamPlayer" parent="." unique_id=2110700416]
