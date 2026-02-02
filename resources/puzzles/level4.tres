@@ -4,12 +4,6 @@
 [ext_resource type="Script" uid="uid://cubddekf200ah" path="res://scripts/puzzle/puzzle_piece_model.gd" id="2_p8apj"]
 [ext_resource type="Script" uid="uid://dupwer7p810uu" path="res://scripts/puzzle/level.gd" id="3_4tdum"]
 
-[sub_resource type="Resource" id="Resource_4tdum"]
-script = ExtResource("2_p8apj")
-operation = 2
-bitmask = 15
-metadata/_custom_type_script = "uid://cubddekf200ah"
-
 [sub_resource type="Resource" id="Resource_ecnn0"]
 script = ExtResource("2_p8apj")
 operation = 6
@@ -34,12 +28,6 @@ operation = 2
 bitmask = 15
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
-[sub_resource type="Resource" id="Resource_evgt1"]
-script = ExtResource("2_p8apj")
-operation = 5
-bits_to_shift = 8
-metadata/_custom_type_script = "uid://cubddekf200ah"
-
 [sub_resource type="Resource" id="Resource_05mls"]
 script = ExtResource("2_p8apj")
 operation = 4
@@ -61,7 +49,7 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_6odhy"]
 script = ExtResource("2_p8apj")
-bitmask = 42600
+bitmask = 175
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_gu6cc"]
@@ -72,5 +60,5 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 script = ExtResource("3_4tdum")
 starting_number = SubResource("Resource_6odhy")
 target_number = SubResource("Resource_gu6cc")
-operations = Array[ExtResource("2_p8apj")]([SubResource("Resource_4tdum"), SubResource("Resource_ecnn0"), SubResource("Resource_yrf76"), SubResource("Resource_7so6k"), SubResource("Resource_p8apj"), SubResource("Resource_evgt1"), SubResource("Resource_05mls"), SubResource("Resource_8mq4a"), SubResource("Resource_0tw0l")])
+operations = Array[ExtResource("2_p8apj")]([SubResource("Resource_ecnn0"), SubResource("Resource_yrf76"), SubResource("Resource_7so6k"), SubResource("Resource_p8apj"), SubResource("Resource_05mls"), SubResource("Resource_8mq4a"), SubResource("Resource_0tw0l")])
 enemy = ExtResource("1_ecnn0")
