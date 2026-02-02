@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8nxwkkwa7k3q"]
 
 [ext_resource type="Script" uid="uid://u4b20jqcak3a" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
-[ext_resource type="Texture2D" uid="uid://df0n2bgkqka8y" path="res://icon.svg" id="2_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://debm0a32f7dim" path="res://assets/Backgrounds/main menu bg V2.png" id="2_fe2o3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sl1te"]
 font_size = 128
@@ -33,9 +33,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_fe2o3")
-stretch_mode = 5
+stretch_mode = 6
 
 [node name="TitleLabel" type="Label" parent="." unique_id=938892341]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -55,9 +56,12 @@ label_settings = SubResource("LabelSettings_sl1te")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.55
+anchor_top = 0.694
 anchor_right = 0.5
-anchor_bottom = 0.55
+anchor_bottom = 0.955
+offset_left = -65.0
+offset_top = -0.040039063
+offset_right = 741.0
 grow_horizontal = 2
 grow_vertical = 2
 
