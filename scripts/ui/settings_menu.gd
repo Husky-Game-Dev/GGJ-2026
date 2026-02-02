@@ -81,8 +81,11 @@ func auto_focus() -> void:
 		tab_container.grab_focus.call_deferred()
 		return
 	var option: HBoxContainer = rows.get_child(0) as HBoxContainer
+	if option == null:
+		return
 	var option_value: Control = option.get_child(1) as Control
-	option_value.grab_focus.call_deferred()
+	if option_value != null:
+		option_value.grab_focus.call_deferred()
 
 
 func serialize_config(config_data: Dictionary) -> void:

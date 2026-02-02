@@ -224,15 +224,15 @@ layout_mode = 2
 layout_mode = 2
 text = "Credits:
 
-Caeden Statia : Project Manager | Programmer
-fragskye : Programming and Asset Implementation
+Caeden Statia: Project Manager | Programmer
+fragskye: Programming and Asset Implementation
 Joyceisdrawing: Pixel Art
-Justin WK | Thewk00 : UI and Background Art
+Justin WK | Thewk00: UI and Background Art
 KaiserLee | KaiserLee: Character and Level Design
-Liam | 12090113 :  Programming
-Matheus Werneck | MatheusW : Programming
+Liam | 12090113:  Programming
+Matheus Werneck | MatheusW: Programming
 Reann Ubungen: Music
-Wyatt Sylvester | Phyzith : Writer and Dialogue Programing"
+Wyatt Sylvester | Phyzith: Writer and Dialogue Programing"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1669056859]
 visible = false
