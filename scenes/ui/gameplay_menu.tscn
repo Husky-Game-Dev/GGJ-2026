@@ -141,6 +141,10 @@ layout_mode = 2
 disabled = true
 model = SubResource("Resource_fqw3q")
 
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=2083048140]
+layout_mode = 2
+text = "INIT // TARGET"
+
 [node name="End" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=1103401863 instance=ExtResource("1_gw64q")]
 custom_minimum_size = Vector2(750, 175)
 layout_mode = 2
