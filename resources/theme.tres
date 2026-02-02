@@ -23,7 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://di26fjpryd5ee" path="res://assets/ui/initial Number.png" id="13_5vjy4"]
 [ext_resource type="Texture2D" uid="uid://bfo6io2ssjefd" path="res://assets/ui/results_chip.png" id="14_x5jkt"]
 [ext_resource type="Texture2D" uid="uid://bbvmmqjfg24fb" path="res://assets/ui/Operand_chip.png" id="15_571rs"]
+[ext_resource type="Texture2D" uid="uid://828uab4sbtk1" path="res://assets/ui/Results flipped.png" id="19_bgkpm"]
 [ext_resource type="Texture2D" uid="uid://cowynooqafuna" path="res://assets/ui/Target Number.png" id="19_ynyh7"]
+[ext_resource type="Texture2D" uid="uid://bnskx8c3m7ml" path="res://assets/ui/Operand_chip_long.png" id="24_bgkpm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_650ll"]
 texture = ExtResource("1_ogd5j")
@@ -260,41 +262,33 @@ expand_margin_top = 1.0
 expand_margin_right = 1.0
 expand_margin_bottom = 1.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nbnsq"]
-content_margin_left = 80.0
-content_margin_top = 20.0
-content_margin_right = 80.0
-content_margin_bottom = 20.0
-bg_color = Color(0.3, 0.3, 0.3, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bgkpm"]
+load_path = "res://.godot/imported/results_chip.png-e2c2895688e3fd1dd0714fd9b40527f6.ctex"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b4fl"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30uav"]
 content_margin_left = 80.0
-content_margin_top = 20.0
+content_margin_top = 60.0
 content_margin_right = 80.0
-content_margin_bottom = 20.0
-bg_color = Color(0.25, 0.25, 0.25, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+content_margin_bottom = 60.0
+texture = SubResource("CompressedTexture2D_bgkpm")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jc8o"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jrssp"]
 content_margin_left = 80.0
-content_margin_top = 20.0
+content_margin_top = 60.0
 content_margin_right = 80.0
-content_margin_bottom = 20.0
-bg_color = Color(0.2, 0.2, 0.2, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+content_margin_bottom = 60.0
+texture = ExtResource("19_bgkpm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i70dn"]
+content_margin_left = 80.0
+content_margin_top = 60.0
+content_margin_right = 80.0
+content_margin_bottom = 60.0
+texture = ExtResource("14_x5jkt")
+modulate_color = Color(0.6255971, 0.6255971, 0.6255971, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3cghe"]
-texture = ExtResource("14_x5jkt")
+texture = ExtResource("19_bgkpm")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iew0c"]
 texture = ExtResource("15_571rs")
@@ -373,6 +367,9 @@ content_margin_bottom = 40.0
 texture = ExtResource("1_ogd5j")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2lwax"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgkpm"]
+texture = ExtResource("24_bgkpm")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hddw8"]
 texture = ExtResource("19_ynyh7")
@@ -508,6 +505,7 @@ corner_radius_bottom_left = 15
 Button/colors/font_color = Color(0.8745098, 0.8745098, 0.30980393, 1)
 Button/colors/font_hover_color = Color(0, 0.9490196, 0, 1)
 Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("9_j5sbq")
 Button/styles/disabled = SubResource("StyleBoxTexture_650ll")
 Button/styles/focus = SubResource("StyleBoxFlat_dad1p")
 Button/styles/hover = SubResource("StyleBoxFlat_bgkpm")
@@ -552,13 +550,14 @@ IconButton/styles/pressed = SubResource("StyleBoxFlat_p8fli")
 InitBox/base_type = &"Button"
 InitBox/styles/normal = SubResource("StyleBoxTexture_jq4af")
 Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("9_j5sbq")
 LargeButton/base_type = &"Button"
 LargeButton/font_sizes/font_size = 80
 LargeButton/styles/disabled = SubResource("StyleBoxFlat_c2hpf")
 LargeButton/styles/focus = SubResource("StyleBoxFlat_vg300")
-LargeButton/styles/hover = SubResource("StyleBoxFlat_nbnsq")
-LargeButton/styles/normal = SubResource("StyleBoxFlat_4b4fl")
-LargeButton/styles/pressed = SubResource("StyleBoxFlat_8jc8o")
+LargeButton/styles/hover = SubResource("StyleBoxTexture_30uav")
+LargeButton/styles/normal = SubResource("StyleBoxTexture_jrssp")
+LargeButton/styles/pressed = SubResource("StyleBoxTexture_i70dn")
 MarginContainer/constants/margin_bottom = 0
 MarginContainer/constants/margin_left = 0
 MarginContainer/constants/margin_right = 0
@@ -585,6 +584,11 @@ PopupMenu/icons/radio_unchecked_disabled = ExtResource("7_0111k")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_hd3vl")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_ifyii")
 PopupMenu/styles/separator = SubResource("StyleBoxEmpty_2lwax")
+PuzzlePiece/base_type = &"Button"
+PuzzlePiece/styles/disabled = SubResource("StyleBoxTexture_bgkpm")
+PuzzlePiece/styles/normal = SubResource("StyleBoxTexture_bgkpm")
+PuzzlePieceLabel/base_type = &"Label"
+PuzzlePieceLabel/fonts/font = ExtResource("12_650ll")
 ResultBox/base_type = &"Button"
 ResultBox/styles/normal = SubResource("StyleBoxTexture_hddw8")
 TabContainer/colors/font_hovered_color = Color(1, 1, 1, 1)

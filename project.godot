@@ -109,3 +109,4 @@ ui_clear_bind={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.08627451, 0.08235294, 0.019607844, 1)
