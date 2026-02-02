@@ -51,6 +51,8 @@ var _character_logo_container: TextureRect = %character_logo_container
 ## Previous dialog entry, held in case we need to extend it.
 var _previous_dialog: String = ""
 
+var _current_input_state: InputManager.InputState = InputManager.InputState.GAMEPLAY
+
 ##
 ## Methods
 ##
@@ -101,11 +103,18 @@ func set_dialog_visibility(dialog_visibility: bool) -> void:
 
 # Initially hides the dialog box, skipping any animation.
 func _ready() -> void:
+	InputManager.input_state_changed.connect(_on_input_state_changed)
 	self.visible = false
+
+func _on_input_state_changed(old: InputManager.InputState, new: InputManager.InputState) -> void:
+	_current_input_state = new
 
 # Emit our interaction signal if any keyboard or mouse press is detected
 func _input(event: InputEvent) -> void:
-	if (event is InputEventMouseButton or event is InputEventKey) and event.is_pressed():
+	var key_valid: bool = event is InputEventMouseButton or event is InputEventKey
+	var key_pressed: bool = event.is_pressed()
+	var state_valid: bool = _current_input_state == InputManager.InputState.GAMEPLAY
+	if key_valid and key_pressed and state_valid:
 		_dialog_label.visible_ratio = 1
 		_user_interacted.emit()
 
