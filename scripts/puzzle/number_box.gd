@@ -43,7 +43,7 @@ func do_operation(puzzle_piece: PuzzlePieceModel) -> void:
 		PuzzlePieceModel.Operation.RIGHT_SHIFT:
 			output.model.bitmask = model.bitmask >> puzzle_piece.bits_to_shift
 		PuzzlePieceModel.Operation.NOT:
-			#XOR with 16 1s
-			output.model.bitmask = model.bitmask ^ 65535
+			output.model.bitmask = ~model.bitmask
+	output.model.bitmask &= (1 << PuzzlePieceModel.MAX_BITS) - 1
 	output.custom_minimum_size = self.custom_minimum_size
 	add_sibling(output)
