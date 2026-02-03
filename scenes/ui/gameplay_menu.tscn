@@ -56,6 +56,7 @@ containers = [NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/Game
 container_left = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/LeftContainer")
 container_right = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer")
 container_output = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer")
+win_color = Color(0.40392157, 1, 0, 1)
 
 [node name="Placeholder" type="ColorRect" parent="." unique_id=1954985148]
 unique_name_in_owner = true
@@ -229,23 +230,6 @@ disabled = true
 model = SubResource("Resource_wg7ri")
 center = true
 
-[node name="End2" parent="Control" unique_id=1152527454 instance=ExtResource("1_gw64q")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-offset_top = -144.0
-offset_right = 793.0
-offset_bottom = -29.0
-grow_vertical = 0
-theme_type_variation = &""
-disabled = true
-model = SubResource("Resource_wg7ri")
-center = true
-
 [node name="UiHint" type="Sprite2D" parent="Control" unique_id=1585740138]
 visible = false
 position = Vector2(2266, 884)
@@ -285,6 +269,6 @@ offset_right = -89.0
 offset_bottom = -39.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Continue?"
+text = "Continue"
 
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
