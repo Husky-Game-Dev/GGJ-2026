@@ -14,9 +14,11 @@ script = ExtResource("1_vowo4")
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 128.0
-offset_bottom = -24.0
+offset_right = -56.0
+offset_bottom = -26.0
 grow_vertical = 2
 theme_override_constants/separation = 64
 
@@ -33,6 +35,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"PuzzlePieceLabel"
 text = "0000000000000000"
-horizontal_alignment = 1
+horizontal_alignment = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

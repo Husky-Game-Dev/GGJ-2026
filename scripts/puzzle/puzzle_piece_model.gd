@@ -15,7 +15,11 @@ enum Operation {
 
 
 ## The maximum number of bits that can be displayed. Updates editor inspector and PuzzlePieceView when changed.
-const MAX_BITS: int = 16
+@export
+var bits: int = 16:
+	set(value):
+		bits = value
+		notify_property_list_changed()
 
 
 ## The operation this puzzle piece performs. Always set.
@@ -27,19 +31,25 @@ var operation: Operation = Operation.NONE:
 
 ## A full integer to perform the bitwise operation with. Set on AND, OR, and XOR pieces.
 @export
-var bitmask: int = 0
+var bitmask: int = 0:
+	set(value):
+		bitmask = value
+		notify_property_list_changed()
 
 ## The amount of bits to shift by. Set on LEFT_SHIFT and RIGHT_SHIFT pieces.
-@export_range(0, MAX_BITS)
+@export
 var bits_to_shift: int = 0
 
 
 func _validate_property(property: Dictionary) -> void:
 	if property.name == "bitmask":
 		property.hint = PROPERTY_HINT_FLAGS
-		property.hint_string = ",".join(range(MAX_BITS).map(func(bit: int) -> String:
+		property.hint_string = ",".join(range(maxi(floori(log(bitmask) / log(2)) + 1, bits)).map(func(bit: int) -> String:
 			return "0x%X" % (1 << bit)
 		))
+	if property.name == "bits_to_shift":
+		property.hint = PROPERTY_HINT_RANGE
+		property.hint_string = "0.0,%d.0" % bits
 	
 	match operation:
 		Operation.NONE, Operation.AND, Operation.OR, Operation.XOR:

@@ -6,35 +6,41 @@
 
 [sub_resource type="Resource" id="Resource_6fsir"]
 script = ExtResource("1_kxy76")
+bits = 8
 operation = 1
 bitmask = 11
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_igpqo"]
 script = ExtResource("1_kxy76")
+bits = 8
 operation = 5
 bits_to_shift = 1
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_kxy76"]
 script = ExtResource("1_kxy76")
+bits = 8
 operation = 4
 bits_to_shift = 1
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_016v7"]
 script = ExtResource("1_kxy76")
+bits = 8
 operation = 2
 bitmask = 1
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_6odhy"]
 script = ExtResource("1_kxy76")
+bits = 8
 bitmask = 9
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_mcxuv"]
 script = ExtResource("1_kxy76")
+bits = 8
 bitmask = 3
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
