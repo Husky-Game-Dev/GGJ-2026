@@ -236,15 +236,16 @@ position = Vector2(2266, 884)
 texture = ExtResource("15_7vv14")
 
 [node name="Label" type="Label" parent="Control" unique_id=941327608]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -1851.0
-offset_top = 92.0
-offset_right = -821.0
-offset_bottom = 231.0
-text = "[pause to check notes]"
+offset_left = -851.0
+offset_top = 282.0
+offset_right = 733.0
+offset_bottom = 421.0
+text = "Hover mouse over operator chips for tips"
 label_settings = SubResource("LabelSettings_bgv53")
 
 [node name="PuzzleMusic" type="AudioStreamPlayer" parent="." unique_id=2110700416]
