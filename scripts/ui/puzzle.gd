@@ -41,6 +41,9 @@ var container_right: VBoxContainer = null
 @export
 var container_output: VBoxContainer = null
 
+@export
+var win_color: Color = Color.WHITE
+
 @onready
 var _music_player: AudioStreamPlayer = $PuzzleMusic
 
@@ -97,9 +100,9 @@ func _process(delta: float) -> void:
 	var children_output: Array[Node] = output.get_children()
 	var last_output: NumberBox = children_output[children_output.size() - 1] as NumberBox
 	if last_output.model.bitmask == ends[0].model.bitmask:
-		last_output.modulate = Color(0.85, 0.00, 0.22, 1.00)
+		last_output.modulate = win_color
 		var end: NumberBox = %End
-		end.modulate = Color(0.85, 0.00, 0.22, 1.00)
+		end.modulate = win_color
 		if !no_win_button:
 			button.visible = true
 	else:

@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
-[ext_resource type="PackedScene" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
 [ext_resource type="Resource" uid="uid://jyljs5kembb7" path="res://resources/puzzles/level3.tres" id="5_jwdk4"]
 [ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="6_6p0e4"]
 [ext_resource type="Resource" uid="uid://cofawvq36jfa1" path="res://resources/puzzles/level4.tres" id="6_qrr3w"]
@@ -56,6 +56,7 @@ containers = [NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/Game
 container_left = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/LeftContainer")
 container_right = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer")
 container_output = NodePath("Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer")
+win_color = Color(0.40392157, 1, 0, 1)
 
 [node name="Placeholder" type="ColorRect" parent="." unique_id=1954985148]
 unique_name_in_owner = true
@@ -148,6 +149,7 @@ layout_mode = 2
 theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_fqw3q")
+center = true
 
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=2083048140]
 layout_mode = 2
@@ -159,6 +161,7 @@ layout_mode = 2
 theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_wg7ri")
+center = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=607950936]
 layout_mode = 2
@@ -186,10 +189,9 @@ layout_mode = 2
 size_flags_horizontal = 2
 
 [node name="Start" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer/OutputContainer" unique_id=736759284 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(750, 175)
+custom_minimum_size = Vector2(1000, 175)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_type_variation = &""
 model = SubResource("Resource_fqw3q")
 
 [node name="LeftContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/GameplayBox/ScrollContainer/HBoxContainer" unique_id=495344684]
@@ -226,6 +228,7 @@ grow_vertical = 0
 theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_wg7ri")
+center = true
 
 [node name="UiHint" type="Sprite2D" parent="Control" unique_id=1585740138]
 visible = false
@@ -267,6 +270,6 @@ offset_right = -89.0
 offset_bottom = -39.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Continue?"
+text = "Continue"
 
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]

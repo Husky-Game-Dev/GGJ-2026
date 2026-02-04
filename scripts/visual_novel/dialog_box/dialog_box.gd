@@ -110,7 +110,7 @@ func _on_input_state_changed(old: InputManager.InputState, new: InputManager.Inp
 	_current_input_state = new
 
 # Emit our interaction signal if any keyboard or mouse press is detected
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	var key_valid: bool = event is InputEventMouseButton or event is InputEventKey
 	var key_pressed: bool = event.is_pressed()
 	var state_valid: bool = _current_input_state == InputManager.InputState.GAMEPLAY
@@ -137,7 +137,7 @@ func _display_string(dialog: String, starting_position: int = 0) -> void:
 		#if is_instance_valid(_sfx_audio_player):
 		#	_sfx_audio_player.play()
 		
-		var timer: SceneTreeTimer = get_tree().create_timer(characterDelay)
+		var timer: SceneTreeTimer = get_tree().create_timer(characterDelay, false)
 		await timer.timeout
 	
 	if is_instance_valid(finished_icon):

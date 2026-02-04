@@ -21,9 +21,10 @@ func _on_input_state_changed(old_state: InputManager.InputState, new_state: Inpu
 		_game_transition_start()
 
 # Handles pause menu
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if InputManager.get_input_state() == InputManager.InputState.GAMEPLAY:
 		if event.is_action(&"pause") && event.is_pressed():
+			get_viewport().set_input_as_handled()
 			InputManager.soft_push_input_state(InputManager.InputState.PAUSE_MENU)
 
 # Handles game loop

@@ -6,6 +6,7 @@
 
 [sub_resource type="Resource" id="Resource_kxy76"]
 script = ExtResource("1_che4v")
+bits = 8
 operation = 2
 bitmask = 2
 bits_to_shift = 1
@@ -13,24 +14,28 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_che4v"]
 script = ExtResource("1_che4v")
+bits = 8
 operation = 3
 bitmask = 4
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_lak6r"]
 script = ExtResource("1_che4v")
+bits = 8
 operation = 1
 bitmask = 4
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_n44ob"]
 script = ExtResource("1_che4v")
+bits = 8
 operation = 6
 bitmask = 16
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_4rhep"]
 script = ExtResource("1_che4v")
+bits = 8
 operation = 4
 bitmask = 32
 bits_to_shift = 2
@@ -38,6 +43,7 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_j8nux"]
 script = ExtResource("1_che4v")
+bits = 8
 operation = 5
 bitmask = 64
 bits_to_shift = 3
@@ -45,12 +51,14 @@ metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_6odhy"]
 script = ExtResource("1_che4v")
-bitmask = 65514
+bits = 8
+bitmask = 234
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [sub_resource type="Resource" id="Resource_mcxuv"]
 script = ExtResource("1_che4v")
-bitmask = 65508
+bits = 8
+bitmask = 228
 metadata/_custom_type_script = "uid://cubddekf200ah"
 
 [resource]
