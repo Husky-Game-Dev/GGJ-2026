@@ -21,19 +21,19 @@ func _ready() -> void:
 	
 	match model.operation:
 		PuzzlePieceModel.Operation.AND:
-			operation_label.text = "& "
+			operation_label.text = "&"
 			tooltip_text = "AND operator \n
 				Sets bit to 1 if both bits are 1, set bit to 0 otherwise. \n
 				1001 & 1010 \n
 				1000"
 		PuzzlePieceModel.Operation.OR:
-			operation_label.text = "| "
+			operation_label.text = "|"
 			tooltip_text = "OR operator\n
 				Sets bit to 1 if one of the bits are 1, set bit to 0 otherwise. \n
 				1001 | 1010 \n
 				1011"
 		PuzzlePieceModel.Operation.XOR:
-			operation_label.text = "^ "
+			operation_label.text = "^"
 			tooltip_text = "XOR operator\n
 				Sets bit to 1 if both bits are different, set bit to 0 otherwise. \n
 				1001 & 1010 \n
@@ -51,7 +51,7 @@ func _ready() -> void:
 				1001 >> 2 \n
 				0010"
 		PuzzlePieceModel.Operation.NOT:
-			operation_label.text = "~ "
+			operation_label.text = "~"
 			tooltip_text = "NOT operator\n
 				Invert all bits, change 1 to 0 and 0 to 1 \n
 				1001 ~ \n

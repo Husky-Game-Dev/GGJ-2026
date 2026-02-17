@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://st7b5b3r3hku"]
+
+[ext_resource type="FontFile" uid="uid://d4jjmlj2mccev" path="res://assets/ui/fonts/JetBrainsMono-Regular.ttf" id="1_uk1xi"]
+
+[resource]
+base_font = ExtResource("1_uk1xi")
+spacing_glyph = 9

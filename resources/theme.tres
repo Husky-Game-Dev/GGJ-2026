@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bbvmmqjfg24fb" path="res://assets/ui/Operand_chip.png" id="15_571rs"]
 [ext_resource type="Texture2D" uid="uid://828uab4sbtk1" path="res://assets/ui/Results flipped.png" id="19_bgkpm"]
 [ext_resource type="Texture2D" uid="uid://cowynooqafuna" path="res://assets/ui/Target Number.png" id="19_ynyh7"]
+[ext_resource type="FontVariation" uid="uid://st7b5b3r3hku" path="res://assets/ui/fonts/JetBrainsMono-Spaced.tres" id="21_jq4af"]
 [ext_resource type="Texture2D" uid="uid://bnskx8c3m7ml" path="res://assets/ui/Operand_chip_long.png" id="24_bgkpm"]
 [ext_resource type="Texture2D" uid="uid://c65rva5mc4ycp" path="res://assets/ui/Text box.png" id="27_lwgk7"]
 
@@ -573,7 +574,7 @@ MarginContainer/constants/margin_top = 0
 NumberBox/base_type = &"Button"
 NumberBox/styles/normal = SubResource("StyleBoxTexture_3cghe")
 NumberBoxLabel/base_type = &"Label"
-NumberBoxLabel/fonts/font = ExtResource("12_650ll")
+NumberBoxLabel/fonts/font = ExtResource("21_jq4af")
 OpperandBox/base_type = &"Button"
 OpperandBox/styles/normal = SubResource("StyleBoxTexture_iew0c")
 OptionButton/constants/arrow_margin = 20
@@ -598,7 +599,7 @@ PuzzlePiece/base_type = &"Button"
 PuzzlePiece/styles/disabled = SubResource("StyleBoxTexture_bgkpm")
 PuzzlePiece/styles/normal = SubResource("StyleBoxTexture_bgkpm")
 PuzzlePieceLabel/base_type = &"Label"
-PuzzlePieceLabel/fonts/font = ExtResource("12_650ll")
+PuzzlePieceLabel/fonts/font = ExtResource("21_jq4af")
 ResultBox/base_type = &"Button"
 ResultBox/styles/normal = SubResource("StyleBoxTexture_hddw8")
 TabContainer/colors/font_hovered_color = Color(1, 1, 1, 1)

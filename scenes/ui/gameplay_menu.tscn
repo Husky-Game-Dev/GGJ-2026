@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://4refucfdir8w" path="res://resources/puzzles/level1.tres" id="3_6ih4k"]
 [ext_resource type="Resource" uid="uid://buwdv46v3m15k" path="res://resources/puzzles/level2.tres" id="4_22ibf"]
 [ext_resource type="PackedScene" uid="uid://k0b11xkb63s4" path="res://scenes/ui/puzzle_piece_view.tscn" id="4_wg7ri"]
-[ext_resource type="PackedScene" uid="uid://c4hncxmetod3d" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
+[ext_resource type="PackedScene" path="res://scenes/puzzle_background.tscn" id="5_6ih4k"]
 [ext_resource type="Resource" uid="uid://jyljs5kembb7" path="res://resources/puzzles/level3.tres" id="5_jwdk4"]
 [ext_resource type="Texture2D" uid="uid://updpqu7lyrfk" path="res://assets/pixel_art/characters/delivery_guy.png" id="6_6p0e4"]
 [ext_resource type="Resource" uid="uid://cofawvq36jfa1" path="res://resources/puzzles/level4.tres" id="6_qrr3w"]
@@ -144,7 +144,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Start" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=338931074 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(750, 175)
+custom_minimum_size = Vector2(850, 175)
 layout_mode = 2
 theme_type_variation = &""
 disabled = true
@@ -156,7 +156,7 @@ layout_mode = 2
 text = "INIT // TARGET"
 
 [node name="End" parent="Control/MarginContainer/VBoxContainer/StartToEnd" unique_id=1103401863 instance=ExtResource("1_gw64q")]
-custom_minimum_size = Vector2(750, 175)
+custom_minimum_size = Vector2(850, 175)
 layout_mode = 2
 theme_type_variation = &""
 disabled = true
@@ -210,7 +210,6 @@ layout_mode = 2
 
 [node name="PuzzlePieceView" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/RightContainer" unique_id=406523941 instance=ExtResource("4_wg7ri")]
 layout_mode = 2
-theme_type_variation = &""
 model = SubResource("Resource_22ibf")
 
 [node name="End" parent="Control" unique_id=10623874 instance=ExtResource("1_gw64q")]
@@ -222,13 +221,16 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
 offset_top = -144.0
-offset_right = 793.0
+offset_right = 978.0
 offset_bottom = -29.0
 grow_vertical = 0
 theme_type_variation = &""
 disabled = true
 model = SubResource("Resource_wg7ri")
-center = true
+
+[node name="HBoxContainer" parent="Control/End" index="0" unique_id=219393587]
+offset_left = 91.0
+offset_right = -99.0
 
 [node name="UiHint" type="Sprite2D" parent="Control" unique_id=1585740138]
 visible = false
@@ -273,3 +275,5 @@ grow_vertical = 0
 text = "Continue"
 
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
+
+[editable path="Control/End"]
