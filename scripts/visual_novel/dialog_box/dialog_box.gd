@@ -111,6 +111,13 @@ func _on_input_state_changed(old: InputManager.InputState, new: InputManager.Inp
 
 # Emit our interaction signal if any keyboard or mouse press is detected
 func _unhandled_input(event: InputEvent) -> void:
+	_handle_input(event)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		_handle_input(event)
+
+func _handle_input(event: InputEvent) -> void:
 	var key_valid: bool = event is InputEventMouseButton or event is InputEventKey
 	var key_pressed: bool = event.is_pressed()
 	var state_valid: bool = _current_input_state == InputManager.InputState.GAMEPLAY
