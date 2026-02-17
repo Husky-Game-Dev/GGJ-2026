@@ -53,6 +53,8 @@ var _original_enemy_sprite_pos: Vector2 = Vector2.ZERO
 
 var no_win_button: bool = false
 
+static var target: String = "0000000000000000"
+
 func _ready() -> void:
 	_original_enemy_sprite_pos = enemy_sprite.position
 	visibility_changed.connect(_on_visibility_changed)
@@ -69,6 +71,7 @@ func load_level(level: int) -> void:
 		print("Loading level ", level) # print matches index, not file name fyi
 		loaded_level = level
 	Global.active_puzzle = self
+	target = NumberBox.bitmask_to_string(levels[level].target_number)
 	for start: NumberBox in starts:
 		start.set_model(levels[level].starting_number)
 	for end: NumberBox in ends:

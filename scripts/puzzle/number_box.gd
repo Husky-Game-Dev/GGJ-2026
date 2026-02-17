@@ -5,13 +5,12 @@ signal sort_up()
 signal sort_down()
 
 var number_box_scene: PackedScene = preload("res://scenes/ui/number_box.tscn")
-var puzzle_piece_view_scene: PackedScene = preload("res://scenes/ui/puzzle_piece_view.tscn")
 
 @onready
 var h_box_container: HBoxContainer = %HBoxContainer
 
 @onready
-var value_label: Label = %ValueLabel
+var value_label: RichTextLabel = %ValueLabel
 
 @export
 var model: PuzzlePieceModel = null
@@ -27,12 +26,31 @@ func _ready() -> void:
 	_original_offset_right = h_box_container.offset_right
 	set_model(model)
 
+static func bitmask_to_string(model: PuzzlePieceModel) -> String:
+	var digits: String
+	digits = String.num_uint64(model.bitmask, 2)
+	if (!digits.length() >= model.bits):
+		digits = ("%0*d" % [model.bits - digits.length(), 0]) + (String.num_uint64(model.bitmask, 2))
+	return digits
+
 func set_model(new_model: PuzzlePieceModel) -> void:
 	if new_model:
 		model = new_model
-	value_label.text = String.num_uint64(model.bitmask, 2)
-	if (!value_label.text.length() >= model.bits):
-		value_label.text = ("%0*d" % [model.bits - value_label.text.length(), 0]) + (String.num_uint64(model.bitmask, 2))
+	var digits: String = bitmask_to_string(model)
+	var colored_digits: String = ""
+	
+	if digits.length() == Puzzle.target.length():
+		for i: int in range(digits.length()):
+			var char1: String = digits[i]
+			var char2: String = Puzzle.target[i]
+			if char1 == char2:
+				colored_digits += "[color=green]%s[/color]" % char1
+			else:
+				colored_digits += "[color=red]%s[/color]" % char1
+		value_label.text = colored_digits
+	else:
+		value_label.text = digits
+	
 	value_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER if center else HORIZONTAL_ALIGNMENT_RIGHT
 	h_box_container.offset_left = 0.0 if center else _original_offset_left
 	h_box_container.offset_right = 0.0 if center else _original_offset_right
