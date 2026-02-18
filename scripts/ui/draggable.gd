@@ -44,7 +44,7 @@ func _start_drag() -> void:
 	reparent(Global.active_puzzle)
 	Global.active_puzzle.placeholder.reparent(container)
 	Global.active_puzzle.placeholder.visible = true
-	Global.active_puzzle.placeholder.custom_minimum_size = Vector2(1000, 175)
+	Global.active_puzzle.placeholder.custom_minimum_size = size
 	Global.active_puzzle.placeholder.size_flags_horizontal = SIZE_SHRINK_BEGIN
 	
 func _stop_drag() -> void:
